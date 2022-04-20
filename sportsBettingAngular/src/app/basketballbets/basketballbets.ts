@@ -23,7 +23,7 @@ export class Basketballbets implements OnInit {
 
     this.gameService.getUpcomingGames(Sport.basketball).subscribe(data => {
       this.games = data;
-      console.log(data);
+      // console.log(data);
     });
   }
 

@@ -25,8 +25,8 @@ export class BetComponent implements OnInit {
   constructor(private gameservice: GameService) { }
 
   ngOnInit() {
-    console.log(this.bet.game.sport);
-    console.log(this.bet.status);
+    // console.log('got to bet component' + this.bet.game.sport);
+    // console.log(this.bet.status);
     if (this.bet.game.sport === Sport.basketball) {
       this.sportName = 'Basketball';
       this.basketball = true;

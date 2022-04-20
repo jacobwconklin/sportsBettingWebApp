@@ -29,30 +29,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadAllActivities();
     this.betService.getAllBetsOfUser(this.authservice.currentUserValue.username).subscribe(
-      allBets => {this.bets = allBets; });
-  }
-
-  private loadAllActivities() {
-    this.userService.getActivities().subscribe(
-      parecords => {
-        this.parecords = parecords;
-
-      },
-      error => {
-        this.notifService.showNotif(error, 'error');
+      allBets => {
+        this.bets = allBets;
       });
-  }
-
-  private deletePARecord(recDate: Date) {
-    // this filter removes it from this class' array field of PARecords
-    this.userService.deleteActivity(recDate);
-    this.loadAllActivities();
-  }
-
-  private editClicked(message: string) {
-    this.notifService.notImplementedWarning(message);
   }
 }
 
