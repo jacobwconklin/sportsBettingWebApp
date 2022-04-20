@@ -8,6 +8,7 @@ import {AuthService} from './auth.service';
 import {NotificationService} from './notification.service';
 import {GameService} from './game.service';
 import {Result} from '../_models/result';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 export class BetService {
@@ -54,12 +55,15 @@ export class BetService {
    */
 
   constructor(private authservice: AuthService,
-              private notifservice: NotificationService) {
+              private notifservice: NotificationService,
+              private http: HttpClient) {
 
   }
 
   getAllBetsOfUser(username: string): Observable<Bet[]> {
     // Would get all of a User's bets from the database, this will be simulated for now.
+
+    // Be real get from db
 
     const bets: Bet[] = new Array<Bet>(4);
 
@@ -99,19 +103,13 @@ export class BetService {
 
   }
 
-  addBet(game: Game, position: string, wager: number, odds: number) {
-    // How much math do we want to do here or before or after here?
-    // Knowing the Game in question and the User's position and wager amount
-    // the rest can be calculated.
+  addBet(bet: Bet) {
 
-    /* let odds: number;          Odds could be determined, but it will be known when confirming the bet
-                                  so it may as well just be passed in
-    if (position === 'Over') {
+    return this.http.post('http://localhost:3030/bet/addbet/',
+      { bet });
 
-    } else if (position === 'Under') {
 
-    } else if (position === )
-    */
+    /*
     const newBet: Bet = {
       user: this.authservice.currentUserValue,
       game: game,
@@ -133,6 +131,8 @@ export class BetService {
       error => {
         this.notifservice.showNotif('Error receiving results');
       });
+
+     */
   }
 
   awaitResults(gameID: string, position: string): Observable<Result> {
