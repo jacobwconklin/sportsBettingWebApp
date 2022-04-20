@@ -1,0 +1,26 @@
+<mat-card class="betCard">
+
+  <div class="section">
+    <p> {{sportName}} </p>
+    <span *ngIf="basketball" class="material-icons" [style.color]="sportColor">sports_basketball</span>
+    <span *ngIf="baseball" class="material-icons" [style.color]="sportColor">sports_baseball</span>
+    <span *ngIf="football" class="material-icons" [style.color]="sportColor">sports_football</span>
+  </div>
+  <p class="gameName"> Game: {{bet.game.homeTeam}} VS {{bet.game.awayTeam}} </p>
+  <div class="section">
+    <p class="odds"> Odds:</p>
+    <p class="odds">{{bet.odds}}</p>
+  </div>
+  <div class="section">
+    <p class="wagered"> Wagered:</p>
+    <p class="wagered">{{bet.wager | currency}}</p>
+  </div>
+  <div class="section">
+    <p class="toWin"> To Win:</p>
+    <p class="toWin">{{bet.toWin | currency}}</p>
+  </div>
+  <div class="section">
+    <p class="status"> Status: {{bet.status}}</p>
+    <mat-icon [style.color]="statusColor">{{statusIcon}}</mat-icon>
+  </div>
+</mat-card>

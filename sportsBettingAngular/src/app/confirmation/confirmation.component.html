@@ -1,0 +1,49 @@
+
+<div class = "confirmationWindow">
+
+  <p></p>
+  <p>
+
+
+
+
+
+  </p>
+  <p></p>
+
+
+
+  <div>
+
+  </div>
+
+  <mat-card class="confirmationCard">
+
+    <p class="tradeInfo"> {{this.clickedTeam}} {{this.betType}} {{this.betLine}} </p>
+    <p class="gameInfo">{{this.gameTime | date:'medium'}} <br> {{this.awayTeam}} at {{this.homeTeam}}</p>
+
+    <div class="innerConfirmationCard">
+      <div></div>
+      <mat-form-field appearance="fill" floatLabel="always" class="amountBox">
+        <mat-label>Bet Amount</mat-label>
+        <input matInput type="number" class="example-right-align" placeholder="EX: 100" [value]="this.betAmount.toString()" [formControl]="toogle">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+      <div></div>
+
+      <div></div>
+      <button color="primary" class="confirmButton" (click)="clickConfirmation(this.betAmount)" routerLink="/home">CONFIRM</button>
+      <div></div>
+
+    </div>
+
+
+  </mat-card>
+
+  <div>
+
+  </div>
+
+</div>
+

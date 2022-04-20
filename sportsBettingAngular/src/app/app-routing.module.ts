@@ -9,14 +9,24 @@ import {Role} from './_models/role';
 import { SettingsComponent } from './settings/settings.component';
 import { CreateRecordComponent } from './create-record/create-record.component';
 import { RankingsComponent } from './rankings/rankings.component';
-
-//TODO: add the route to the 'settings' component.
+import { Basketballbets } from './basketballbets/basketballbets';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { FootballbetsComponent } from './footballbets/footballbets.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { BaseballbetsComponent } from './baseballbets/baseballbets.component';
 
 const routes: Routes = [{path: '', component: HomeComponent, canActivate: [AuthGuard]}, {path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent },
   {path: 'admin', component: AdminComponent, canActivate: [AuthGuard], data: { roles: [Role.admin]}},
   { path: 'settings', component: SettingsComponent}, {path: 'createRecord', component: CreateRecordComponent},
-  { path: 'rankings', component: RankingsComponent}, { path: '**', redirectTo: '' }];
+  { path: 'rankings', component: RankingsComponent},
+  {path: 'confirm', component: ConfirmationComponent},
+  {path: 'basketball', component: Basketballbets},
+  {path: 'football', component: FootballbetsComponent},
+  {path: 'baseball', component: BaseballbetsComponent},
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+  {path: 'leaderboard', component: LeaderboardComponent},
+  { path: '**', redirectTo: '' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

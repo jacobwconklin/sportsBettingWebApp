@@ -1,0 +1,70 @@
+.mat-icon {
+  transform: scale(2);
+}
+
+.centerText {
+  text-align: center;
+
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.basketball {
+  background-color: darkgreen;
+  grid-area: basketball;
+
+  width: 150px;
+  height: 150px;
+}
+
+.football {
+  background-color: darkred;
+  grid-area: football;
+
+  width: 150px;
+  height: 150px;
+}
+
+.baseball {
+  background-color: darkcyan;
+  grid-area: baseball;
+
+  width: 150px;
+  height: 150px;
+}
+
+.game {
+  font-size: 20px;
+  grid-area: game;
+}
+
+.spread {
+  font-size: 20px;
+  grid-area: spread;
+}
+
+.total {
+  font-size: 20px;
+  grid-area: total;
+}
+
+.moneyline {
+  font-size: 20px;
+  grid-area: moneyline;
+}
+
+.sports-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 200px;
+  grid-template-areas:
+    ". basketball . football . baseball .";
+}
+
+.bet-types {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 3fr 2fr 3fr 2fr 3fr 1fr;
+  grid-template-rows: 75px;
+  grid-template-areas:
+    ". game . spread . total . moneyline .";
+}

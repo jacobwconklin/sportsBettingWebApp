@@ -1,0 +1,32 @@
+.confirmationWindow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tradeInfo {
+  text-align: center;
+}
+
+.gameInfo {
+  text-align: center;
+}
+
+.innerConfirmationCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.example-right-align {
+  text-align: right;
+}
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+.confirmButton {
+}

@@ -1,0 +1,21 @@
+.sportType {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.betCard {
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.material-icons {
+  font-size: 40px;
+}
+
+

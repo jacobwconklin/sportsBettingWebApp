@@ -20,6 +20,13 @@ import { CreateRecordComponent } from './create-record/create-record.component';
 import { RankingsComponent } from './rankings/rankings.component';
 import { RankingEntitiesComponent } from './rankingentities/rankingentitie.component';
 import { IgxAvatarModule } from 'igniteui-angular';
+import { BetComponent } from './bet/bet.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { FootballbetsComponent } from './footballbets/footballbets.component';
+import { Basketballbets } from './basketballbets/basketballbets';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { BaseballbetsComponent } from './baseballbets/baseballbets.component';
+import { GamecardsComponent } from './gamecards/gamecards.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +40,14 @@ import { IgxAvatarModule } from 'igniteui-angular';
     SettingsComponent,
     CreateRecordComponent,
     RankingsComponent,
-    RankingEntitiesComponent
+    RankingEntitiesComponent,
+    ConfirmationComponent,
+    LeaderboardComponent,
+    Basketballbets,
+    FootballbetsComponent,
+    BaseballbetsComponent,
+    BetComponent,
+    GamecardsComponent
   ],
   imports: [
     BrowserModule,

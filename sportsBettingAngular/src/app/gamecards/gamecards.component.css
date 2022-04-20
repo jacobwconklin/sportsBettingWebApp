@@ -1,0 +1,77 @@
+.bets {
+  display: grid;
+  grid-template-columns: 1fr 3fr 2fr 3fr 2fr 3fr 2fr 3fr 1fr;
+  grid-template-rows: 100px;
+  grid-template-areas:
+    ". gameOne . spreadOne . totalOne . moneylineOne ."
+    ". gameTwo . spreadTwo . totalTwo . moneylineTwo .";
+}
+
+
+.gameOne {
+  grid-area: gameOne;
+  height: 40px;
+  padding: 0;
+}
+
+.gameTwo {
+  grid-area: gameTwo;
+  height: 40px;
+  padding: 0;
+}
+
+.spreadOne {
+  grid-area: spreadOne;
+  height: 80px;
+  width: 180px;
+  padding: 0;
+  background-color: lightgray;
+}
+
+.spreadTwo {
+  grid-area: spreadTwo;
+  height: 80px;
+  width: 180px;
+  padding: 0;
+  background-color: lightgray;
+}
+
+.totalOne {
+  grid-area: totalOne;
+  height: 80px;
+  width: 180px;
+  padding: 0;
+  background-color: lightgray;
+}
+
+.totalTwo {
+  grid-area: totalTwo;
+  height: 80px;
+  width: 180px;
+  padding: 0;
+  background-color: lightgray;
+}
+
+.moneylineOne {
+  grid-area: moneylineOne;
+  height: 80px;
+  width: 180px;
+  padding: 0;
+  background-color: lightgray;
+}
+
+.moneylineTwo {
+  grid-area: moneylineTwo;
+  height: 80px;
+  width: 180px;
+  padding: 0;
+  background-color: lightgray;
+}
+
+.time {
+  text-align: center;
+}
+
+hr.solid {
+  border-top: 3px solid #bbb;
+}

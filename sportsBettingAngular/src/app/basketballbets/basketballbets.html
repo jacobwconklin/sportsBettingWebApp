@@ -1,0 +1,44 @@
+<button mat-icon-button routerLink="/home">
+  <mat-icon>cancel</mat-icon>
+</button>
+
+<p class="centerText">Place a bet!</p>
+
+<p class="centerText">Account Balance: {{this.getUserAvailableMoney() | currency}}</p>
+
+
+<div class="sports-buttons">
+
+  <button mat-icon-button class="basketball" routerLink="/basketball">
+    <mat-icon>sports_basketball</mat-icon>
+    <br>
+    Basketball
+  </button>
+
+  <button mat-icon-button class="football" routerLink="/football">
+    <mat-icon>sports_football</mat-icon>
+    <br>
+    Football
+  </button>
+
+  <button mat-icon-button class="baseball" routerLink="/baseball">
+    <mat-icon>sports_baseball</mat-icon>
+    <br>
+    Baseball
+  </button>
+
+</div>
+
+<div class="bet-types">
+
+  <p class="game">Game</p>
+
+  <p class="spread">Spread</p>
+
+  <p class="total">Total</p>
+
+  <p class="moneyline">Moneyline</p>
+
+</div>
+
+<app-gamecards *ngFor="let game of games" [game]="game">game</app-gamecards>
