@@ -1,0 +1,90 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <mat-card class="registration-card">
+    <mat-card-header>
+
+      <mat-card-title>Registration</mat-card-title>
+
+    </mat-card-header>
+
+    <mat-card-content>
+
+
+
+
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="First Name" type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+          <mat-hint *ngIf="submitted && f.firstName.errors" >
+            <mat-hint *ngIf="f.firstName.errors.required">First Name is required</mat-hint>
+            <mat-hint *ngIf="f.firstName.errors.pattern">First Name is using illegal characters.</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="Last Name" type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }">
+          <mat-hint *ngIf="submitted && f.lastName.errors" >
+            <mat-hint *ngIf="f.lastName.errors.required">Last Name is required</mat-hint>
+            <mat-hint *ngIf="f.lastName.errors.pattern">Last Name is using illegal characters.</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="Email" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+          <mat-hint *ngIf="submitted && f.email.errors" >
+            <mat-hint *ngIf="f.email.errors.required">Email is required</mat-hint>
+            <mat-hint *ngIf="f.email.errors.pattern">Email is typed with errors.</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+
+        <mat-form-field>
+          <input matInput placeholder="Username" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+          <mat-hint *ngIf="submitted && f.username.errors" >
+            <mat-hint *ngIf="f.username.errors.required">Username is required</mat-hint>
+            <mat-hint *ngIf="f.username.errors.pattern">Username is using illegal characters.</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <input matInput placeholder="Password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          <mat-hint *ngIf="submitted && f.password.errors" >
+            <mat-hint *ngIf="f.password.errors.required">password is required</mat-hint>
+            <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters.</mat-hint>
+          </mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field>
+          <mat-select placeholder="Role" formControlName="role">
+            <mat-option [value]="role.name" *ngFor="let role of roles;">{{role.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+
+
+
+    </mat-card-content>
+    <mat-card-actions>
+
+      <button mat-button [disabled]="loading" >Register</button>
+      <!--      <img class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />-->
+      <button mat-button  routerLink="/login" >Cancel</button>
+      <mat-spinner  *ngIf="loading" [diameter]="30"></mat-spinner>
+
+    </mat-card-actions>
+  </mat-card>
+
+</form>

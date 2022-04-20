@@ -1,0 +1,53 @@
+
+<div class="overallSettingsPage">
+  <div> </div>
+
+  <mat-card class="topGoalCard" >
+
+
+    <strong class="title"> Goal Setting </strong>
+
+    <div class="sliders">
+      <div></div>
+      <section>
+        <mat-slider vertical class="calorieSlider" min="1000" max="3000" [(ngModel)]="calorieGoal"></mat-slider>
+      </section>
+
+      <section>
+        <mat-slider vertical class="minuteSlider" min="30" max="360" [(ngModel)]="minuteGoal"></mat-slider>
+      </section>
+      <div></div>
+    </div>
+  </mat-card>
+
+
+  <div> </div>
+
+  <div> </div>
+
+  <mat-card class = "bottomGoalCard">
+
+    <div class="buttons">
+      <mat-form-field appearance="fill" class="calorieBox">
+        <mat-label>Calorie Goal</mat-label>
+        <input matInput type="number" value="{{calorieGoal}}">
+        <span matSuffix></span>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="minuteBox">
+        <mat-label>Minute Goal</mat-label>
+        <input matInput type="number" value="{{minuteGoal}}">
+        <span matSuffix></span>
+      </mat-form-field>
+    </div>
+
+    <div class="saveButton">
+      <button mat-button color="primary" (click)="saveGoals()"  > Save </button>
+    </div>
+  </mat-card>
+
+  <div> </div>
+</div>
+
+
+

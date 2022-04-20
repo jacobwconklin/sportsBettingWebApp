@@ -1,0 +1,44 @@
+<div class ="rankEntity">
+  <div></div>
+  <mat-card class="rankCard">
+    <div class="numberSection">
+      <div></div>
+      <p class="rankNumber" fontsize style="font-size:50px;">       {{ranking.rank}}</p>
+      <div></div>
+    </div>
+
+    <div class="iconSection">
+      <div></div>
+      <igx-avatar initials="{{ranking.first.substring(0,1)}}{{ranking.last.substr(0, 1)}}"
+                  [roundShape]="true" size="medium" matTooltip="{{ranking.first}} {{ranking.last}}"
+                  [style.background]="iconBackColor" [style.color]="iconLetterColor">
+      </igx-avatar>
+      <div></div>
+    </div>
+
+    <div class="calorieSection">
+      <p>{{ranking.avgCalories}} Cal</p>
+      <mat-progress-bar
+        class="example-margin"
+        [color]="calColor"
+        [mode]="mode"
+        [value]=[calprogressvalue]>
+      </mat-progress-bar>
+      <p> {{calprogressvalue}}%</p>
+    </div>
+    <div> </div>
+    <div class="minuteSection">
+      <p>{{ranking.avgMinutes}} Min</p>
+      <mat-progress-bar
+        class="example-margin"
+        [color]="minColor"
+        [mode]="mode"
+        [value]=[minprogressvalue]>
+      </mat-progress-bar>
+      <p>{{minprogressvalue}}%</p>
+    </div>
+  </mat-card>
+  <div></div>
+</div>
+
+

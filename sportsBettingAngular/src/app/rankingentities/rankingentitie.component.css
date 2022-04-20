@@ -1,0 +1,27 @@
+.rankCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+igx-avatar {
+  background: black;
+  color: gold;
+}
+
+.rankEntity {
+  display: grid;
+  grid-template-columns: 1fr 50fr 1fr;
+}
+
+
+.numberSection {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+.iconSection {
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+

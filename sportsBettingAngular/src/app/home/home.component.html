@@ -1,0 +1,18 @@
+
+<div class="pa-record-container">
+
+  <parecord-component class="card-item" *ngFor="let parecord of parecords" [parecord]="parecord"
+                      matTooltip="{{parecord.createdByUsername}}" (deleteEvent) = "deletePARecord($event)"></parecord-component>
+
+<!--<div *ngFor="let parecord of parecords">{{parecord}}</div>-->
+
+
+</div>
+
+
+<div class="fab-container">
+  <button mat-flat-button color="primary"  matTooltip="Create a new Personal Activity Record"
+          routerLink='/createRecord' (click)="refresh()">
+    <i class="material-icons">add</i>
+  </button>
+</div>

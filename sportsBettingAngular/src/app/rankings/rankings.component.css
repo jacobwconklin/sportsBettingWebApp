@@ -1,0 +1,14 @@
+.rankingsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.extraCreditButtons {
+  display: grid;
+  grid-template-columns: 1fr 50fr 1fr;
+}
+
+.ecButtonsCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}

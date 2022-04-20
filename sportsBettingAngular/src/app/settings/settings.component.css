@@ -1,0 +1,26 @@
+.topGoalCard {
+  text-align: center;
+}
+
+.sliders {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.overallSettingsPage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*grid-template-areas: ;*/
+}
+
+.saveButton {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+
