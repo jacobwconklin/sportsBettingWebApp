@@ -9,11 +9,11 @@ const schema = new Schema({
         firstName: { type: String, required: true },
         lastName: { type: String, required: true },
         role: {type:String, required: true},
-        trades: {type: Number, required: true},
-        earnings: {type: Number, required: true},
-        wins: {type: Number, required: true},
-        wagered: {type: Number, required: true},
-        available: {type: Number, required: true}
+        trades: {type: Number, required: true, default: 0},
+        earnings: {type: Number, required: true, default: 0},
+        wins: {type: Number, required: true, default: 0},
+        wagered: {type: Number, required: true, default: 0},
+        available: {type: Number, required: true, default: 100000}
     });
 
 schema.set('toJSON', { virtuals: true });

@@ -37,7 +37,7 @@ export class LeaderboardComponent implements AfterViewInit {
   constructor(private authservice: AuthService, private userservice: UserService) {}
 
   ngAfterViewInit() {
-    this.userservice.getAllUsers().subscribe( allUsers => {
+    this.userservice.getAll().subscribe( allUsers => {
       for (let i = 0; i < allUsers.length; i++) {
         let wRate = 0;
         if (allUsers[i].trades > 0) {
