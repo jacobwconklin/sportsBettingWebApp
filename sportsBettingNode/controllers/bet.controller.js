@@ -1,4 +1,4 @@
-const parecordService = require('../services/bet.service')
+const betService = require('../services/bet.service')
 
 module.exports = {
     addBet,
@@ -8,14 +8,18 @@ module.exports = {
 
 function addBet(req, res, next) {
 
-    console.log('got to parecordcontroller');
-    parecordService.addBet(req.body, req.user.sub).then(result => {res.send(result)})
+
+    // console.log(req);
+    // console.log('got to add bet in controller');
+    // console.log(req.body);
+    // console.log(req.body.bet.position);
+    betService.addBet(req.body.bet, req.user.sub).then(result => {res.send(result)})
         .catch(err => {next(err)});
 }
 
 function getBetsOfUser(req,res,next){
-    console.log('got to parecordcontroller in get');
-    parecordService.getBetsOfUser(req.user.sub).then(records => res.json(records))
+    console.log('got to get bets of user in controller');
+    betService.getBetsOfUser(req.user.sub).then(records => res.json(records))
         .catch(err => next(err));
     }
 
