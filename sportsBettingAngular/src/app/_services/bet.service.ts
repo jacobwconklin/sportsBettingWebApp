@@ -60,10 +60,12 @@ export class BetService {
 
   }
 
-  getAllBetsOfUser(username: string): Observable<Bet[]> {
+  // Return Observable<Bet[]>
+  getAllBetsOfUser(username: string): Observable<any> {
     // Would get all of a User's bets from the database, this will be simulated for now.
 
     // Be real get from db
+    return this.http.get('http://localhost:3030/bet/getbetsofuser');
 
     const bets: Bet[] = new Array<Bet>(4);
 
