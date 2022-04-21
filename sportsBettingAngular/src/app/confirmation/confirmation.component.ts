@@ -53,6 +53,8 @@ export class ConfirmationComponent implements OnInit {
   clickConfirmation(amountBet) {
     this.authService.currentUserValue.available -= amountBet;
 
+    // Need to build the correct Bet here, not a random Bet.
+
     // May need to change Game model or need to add more query params to make a Game JSON
 
     const game: Game = {
