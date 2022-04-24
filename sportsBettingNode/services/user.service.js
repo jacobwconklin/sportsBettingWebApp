@@ -2,6 +2,7 @@ const config = require('../config.json');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const db = require('../_helpers/database');
+const {castToNumber} = require("mongoose/lib/schema/operators/helpers");
 const User = db.User;
 
 
@@ -12,7 +13,8 @@ module.exports = {
     getByUsername,
     addUser,
     setGoals,
-    getGoals
+    getGoals,
+    addBet
 }
 
 async function authenticate({ username, password }) {
@@ -70,16 +72,18 @@ async function setGoals(values, userid){
 
     let id = await User.findOne({username: userid}).select('_id');
 
-    /* console.log('user id in set goals is: ' + id);
-    let beforeGoals = await User.findOne({username: userid}).select('caloriegoal minutegoal');
-    console.log('before values: ' + beforeGoals);
-    await User.updateOne({_id: id._id}, {caloriegoal: values.caloriegoal, minutegoal: values.minutegoal});
-    let afterGoals = await User.findOne({username: userid}).select('caloriegoal minutegoal');
-    console.log('after values: ' + afterGoals); */
-
     return await User.updateOne({_id: id._id}, {caloriegoal: values.caloriegoal, minutegoal: values.minutegoal});
+}
 
+async function addBet(data, userid) {
+    console.log('addBet data service', data);
 
+    let id = await User.findOne({username: userid}).select('_id');
+    let wagered = await User.findOne({username: userid}).select('wagered');
+    let trades = await User.findOne({username: userid}).select('trades');
+    let available = await User.findOne({username: userid}).select('available');
+
+    return await User.updateOne({_id: id._id}, {wagered: wagered.wagered + data.wagered, trades: trades.trades + 1, available: available.available - wagered.wagered});
 }
 
 

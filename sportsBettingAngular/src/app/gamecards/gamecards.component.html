@@ -6,24 +6,24 @@
   <p class="gameOne"> {{game.homeTeam}} </p>
 
   <button mat-button class="spreadOne" [routerLink]="['/confirm']" [queryParams]=
-    "{homeTeam:this.game.homeTeam, awayTeam:this.game.awayTeam, clickedTeam:this.game.homeTeam, betType:'Spread', betLine:this.game.homeSpreadLine, gameTime:this.game.time}"> {{game.homeSpread}} <br> {{game.homeSpreadLine}} </button>
+    "{homeTeam:this.game.homeTeam, homeSpread: this.game.homeSpread, homeSpreadLine: this.game.homeSpreadLine, homeMoneyLine: this.game.homeMoneyLine, awayTeam:this.game.awayTeam, awaySpread: this.game.awaySpread, awaySpreadLine: this.game.awaySpreadLine, awayMoneyLine: this.game.awayMoneyLine, clickedTeam:this.game.homeTeam, totalNumber: this.game.totalNumber, over: this.game.over, under: this.game.under, betType:'Spread', betLine:this.game.homeSpreadLine, gameTime:this.game.time, sport: this.game.sport}"> {{game.homeSpread}} <br> {{game.homeSpreadLine}} </button>
 
   <button mat-button class="totalOne" [routerLink]="['/confirm']" [queryParams]=
-    "{homeTeam:this.game.homeTeam, awayTeam:this.game.awayTeam, clickedTeam:this.game.homeTeam, betType:'Over', betLine:this.game.over, gameTime:this.game.time}"> O {{game.totalNumber}} <br> {{game.over}} </button>
+    "{homeTeam:this.game.homeTeam, homeSpread: this.game.homeSpread, homeSpreadLine: this.game.homeSpreadLine, homeMoneyLine: this.game.homeMoneyLine, awayTeam:this.game.awayTeam, awaySpread: this.game.awaySpread, awaySpreadLine: this.game.awaySpreadLine, awayMoneyLine: this.game.awayMoneyLine, clickedTeam:this.game.homeTeam, totalNumber: this.game.totalNumber, over: this.game.over, under: this.game.under, betType:'Over', betLine:this.game.over, gameTime:this.game.time, sport: this.game.sport}"> O {{game.totalNumber}} <br> {{game.over}} </button>
 
   <button mat-button class="moneylineOne" [routerLink]="['/confirm']" [queryParams]=
-    "{homeTeam:this.game.homeTeam, awayTeam:this.game.awayTeam, clickedTeam:this.game.homeTeam, betType:'ML', betLine:this.game.homeMoneyLine, gameTime:this.game.time}"> {{game.homeMoneyLine}} </button>
+    "{homeTeam:this.game.homeTeam, homeSpread: this.game.homeSpread, homeSpreadLine: this.game.homeSpreadLine, homeMoneyLine: this.game.homeMoneyLine, awayTeam:this.game.awayTeam, awaySpread: this.game.awaySpread, awaySpreadLine: this.game.awaySpreadLine, awayMoneyLine: this.game.awayMoneyLine, clickedTeam:this.game.homeTeam, totalNumber: this.game.totalNumber, over: this.game.over, under: this.game.under, betType:'ML', betLine:this.game.homeMoneyLine, gameTime:this.game.time, sport: this.game.sport}"> {{game.homeMoneyLine}} </button>
 
   <p class="gameTwo"> {{game.awayTeam}} </p>
 
   <button mat-button class="spreadTwo" [routerLink]="['/confirm']" [queryParams]=
-    "{homeTeam:this.game.homeTeam, awayTeam:this.game.awayTeam, clickedTeam:this.game.awayTeam, betType:'Spread', betLine:this.game.awaySpreadLine, gameTime:this.game.time}"> {{game.awaySpread}} <br> {{game.awaySpreadLine}} </button>
+    "{homeTeam:this.game.homeTeam, homeSpread: this.game.homeSpread, homeSpreadLine: this.game.homeSpreadLine, homeMoneyLine: this.game.homeMoneyLine, awayTeam:this.game.awayTeam, awaySpread: this.game.awaySpread, awaySpreadLine: this.game.awaySpreadLine, awayMoneyLine: this.game.awayMoneyLine, clickedTeam:this.game.awayTeam, totalNumber: this.game.totalNumber, over: this.game.over, under: this.game.under, betType:'Spread', betLine:this.game.awaySpreadLine, gameTime:this.game.time, sport: this.game.sport}"> {{game.awaySpread}} <br> {{game.awaySpreadLine}} </button>
 
   <button mat-button class="totalTwo" [routerLink]="['/confirm']" [queryParams]=
-    "{homeTeam:this.game.homeTeam, awayTeam:this.game.awayTeam, clickedTeam:this.game.awayTeam, betType:'Under', betLine:this.game.under, gameTime:this.game.time}"> U {{game.totalNumber}} <br> {{game.under}} </button>
+    "{homeTeam:this.game.homeTeam, homeSpread: this.game.homeSpread, homeSpreadLine: this.game.homeSpreadLine, homeMoneyLine: this.game.homeMoneyLine, awayTeam:this.game.awayTeam, awaySpread: this.game.awaySpread, awaySpreadLine: this.game.awaySpreadLine, awayMoneyLine: this.game.awayMoneyLine, clickedTeam:this.game.awayTeam, totalNumber: this.game.totalNumber, over: this.game.over, under: this.game.under, betType:'Under', betLine:this.game.under, gameTime:this.game.time, sport: this.game.sport}"> U {{game.totalNumber}} <br> {{game.under}} </button>
 
   <button mat-button class="moneylineTwo" [routerLink]="['/confirm']" [queryParams]=
-    "{homeTeam:this.game.homeTeam, awayTeam:this.game.awayTeam, clickedTeam:this.game.awayTeam, betType:'ML', betLine:this.game.awayMoneyLine, gameTime:this.game.time}"> {{game.awayMoneyLine}} </button>
+    "{homeTeam:this.game.homeTeam, homeSpread: this.game.homeSpread, homeSpreadLine: this.game.homeSpreadLine, homeMoneyLine: this.game.homeMoneyLine, awayTeam:this.game.awayTeam, awaySpread: this.game.awaySpread, awaySpreadLine: this.game.awaySpreadLine, awayMoneyLine: this.game.awayMoneyLine, clickedTeam:this.game.awayTeam, totalNumber: this.game.totalNumber, over: this.game.over, under: this.game.under, betType:'ML', betLine:this.game.awayMoneyLine, gameTime:this.game.time, sport: this.game.sport}"> {{game.awayMoneyLine}} </button>
 
 </div>
 

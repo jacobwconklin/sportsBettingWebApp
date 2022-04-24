@@ -5,7 +5,7 @@ import {Game} from './game';
 export class Bet {
   user: User;
   game: Game;
-  position: string; // Idk how best to represent the user's position on a bet
+  betType: string; // Idk how best to represent the user's position on a bet
                     // (meaning like what kind of bet they are doing, maybe should be an enumerated type)
   odds: number;
   wager: number;

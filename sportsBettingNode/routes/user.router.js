@@ -9,6 +9,7 @@ router.post('/authenticate', userController.authenticate);
 router.post('/register', userController.register);
 router.get('/allusers', userController.getAllUsers);
 router.post('/setgoals/:username', userController.setgoals);
+router.post('/addBet/:username', userController.addBet);
 router.get('/getgoals', userController.getgoals);
 //router.get('/getAllRecordsOfUser', userController.getAllRecordsOfUser);
 

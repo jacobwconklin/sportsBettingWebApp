@@ -93,7 +93,7 @@ export class BetService {
       bets[i] = {
       user: currUser,
       game: game,
-      position: this.positions[Math.round(Math.random() * 5)],
+      betType: this.positions[Math.round(Math.random() * 5)],
       odds: Math.round((Math.random() - 1) * 200),
       wager: Math.round(Math.random() * 15000),
       toWin: Math.round(Math.random() * 15000),

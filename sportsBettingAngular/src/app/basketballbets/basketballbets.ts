@@ -3,6 +3,7 @@ import {GameService} from '../_services/game.service';
 import {Sport} from '../_models/sport';
 import {Game} from '../_models/game';
 import {AuthService} from '../_services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-basketballbets',
@@ -13,7 +14,12 @@ export class Basketballbets implements OnInit {
 
   games: Game[] = [];
 
-  constructor(private gameService: GameService, private authService: AuthService) { }
+  sport: string;
+
+  constructor(private gameService: GameService, private authService: AuthService, private route: Router) {
+    this.sport = this.route.url.substring(1, this.route.url.length);
+    // console.log(this.sport);
+  }
 
   ngOnInit() {
     this.getGames();

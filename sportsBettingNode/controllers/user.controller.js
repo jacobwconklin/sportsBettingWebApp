@@ -6,7 +6,8 @@ module.exports = {
     getAllUsers,
     register,
     getgoals,
-    setgoals
+    setgoals,
+    addBet
     //getAllRecordsOfUser
 };
 
@@ -24,6 +25,28 @@ function getAllUsers(req, res, next) {
         .then(users => res.json(users))
         .catch(err => next(err));
 }
+
+function addBet(req, res, next) {
+    console.log("addBet", req.body);
+    userService.addBet(req.body, req.params.username)
+        .then(result => {res.send(result)})
+        .catch(err => next(err));
+}
+
+//TODO: set goals (calorie goal and minute goal) for a user. Hint: write a middleware function and add it to the module exports.
+function setgoals(req, res, next)
+{
+    /*console.log(req.body);
+    console.log(req.body.caloriegoal);
+    console.log(req.body.minutegoal); */
+    //console.log(req.params);
+    //console.log(req.params.username);
+    userService.setGoals(req.body, req.params.username)
+        .then(result => {res.send(result)})
+        .catch(err =>{next(err)});
+
+}
+
 
 function register(req, res, next) {
 
@@ -49,14 +72,3 @@ function getgoals(req, res, next)
     userService.getAllRecordsOfUser(req.query.username).then( result => {res.send(result)}).catch(err => next(err));
 }*/
 
-//TODO: set goals (calorie goal and minute goal) for a user. Hint: write a middleware function and add it to the module exports.
-function setgoals(req, res, next)
-{
-    /*console.log(req.body);
-    console.log(req.body.caloriegoal);
-    console.log(req.body.minutegoal); */
-    //console.log(req.params);
-    //console.log(req.params.username);
-    userService.setGoals(req.body, req.params.username).then(result => {res.send(result)}).catch(err =>{next(err)});
-
-}

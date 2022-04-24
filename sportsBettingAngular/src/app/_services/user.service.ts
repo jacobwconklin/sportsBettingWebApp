@@ -69,6 +69,10 @@ export class UserService {
     return this.http.get<User[]>(`http://localhost:3030/user/allusers`);
   }
 
+  addBet(bet, username) {
+    return this.http.post('http://localhost:3030/user/addBet/' + username, bet);
+  }
+
   // getAllRecordsOfUser(username: string) {
   //  return this.http.get<PARecord[]>(`http://localhost:3030/user/allusers`, {params: {username}});
   // }
