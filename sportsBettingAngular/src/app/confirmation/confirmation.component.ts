@@ -15,6 +15,8 @@ import { UserService } from '../_services/user.service';
 })
 export class ConfirmationComponent implements OnInit {
 
+  available: number;
+
   betAmount = 0;
 
   sportString: string = this.route.snapshot.queryParamMap.get('sport');
@@ -51,6 +53,8 @@ export class ConfirmationComponent implements OnInit {
     this.toogle.valueChanges.subscribe(newToogleValue => {
       this.betAmount = newToogleValue;
     });
+
+    this.available = this.authService.currentUserValue.available;
 
   }
 

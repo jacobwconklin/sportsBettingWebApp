@@ -26,7 +26,8 @@
       <div></div>
       <mat-form-field appearance="fill" floatLabel="always" class="amountBox">
         <mat-label>Bet Amount</mat-label>
-        <input matInput type="number" class="example-right-align" placeholder="EX: 100" [value]="this.betAmount.toString()" [formControl]="toogle">
+        <input matInput type="number" class="example-right-align" placeholder="EX: 100"
+               [value]="this.betAmount.toString()" [formControl]="toogle" max="{{this.available}}">
         <span matPrefix>$&nbsp;</span>
         <span matSuffix>.00</span>
       </mat-form-field>
