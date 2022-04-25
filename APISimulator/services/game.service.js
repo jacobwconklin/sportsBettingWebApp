@@ -1,5 +1,3 @@
-import {Game} from '../models/game';
-
 module.exports = {
     getGames,
     getResult
@@ -9,7 +7,7 @@ module.exports = {
 
 const games = [{
     id: '1',
-    sport: Sport.basketball,
+    sport: 2,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Toronto Raptors', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -3.0, // These are the values we would get from jsonodds.com
