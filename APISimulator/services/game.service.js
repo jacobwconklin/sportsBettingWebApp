@@ -338,9 +338,10 @@ async function getGames(sport) {
         console.log(sport);
         // May want to create a promise here, probably unnecessary
         if (sport === 2) {
-            // return baseballGames;
+            // return basebaAddllGames;
         }
         else if (sport === 1) {
+            console.log('returning football games');
             resolve(footballGames);
         }
         else {
@@ -354,15 +355,18 @@ async function getGames(sport) {
 async function getResult(gameID) {
     // Find the game by the game ID and return its results
     // May have the setTimeOut here!
-    for (let i = 0; i < basketballGames.length; i++) {
-        if (basketballGames[i].id === gameID) {
-            return basketballGames[i].result;
+    return new Promise((resolve, reject) => {
+        for (let i = 0; i < basketballGames.length; i++) {
+            if (basketballGames[i].id === gameID) {
+                resolve(basketballGames[i].result);
+            }
         }
-    }
-    for (let i = 0; i < footballGames.length; i++) {
-        if (footballGames[i].id === gameID) {
-            return footballGames[i].result;
+        for (let i = 0; i < footballGames.length; i++) {
+            if (footballGames[i].id === gameID) {
+                resolve(footballGames[i].result);
+            }
         }
-    }
+    });
+
 
 }
