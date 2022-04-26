@@ -337,11 +337,10 @@ async function getGames(sport) {
         console.log('got to getGames Service');
         console.log(sport);
         // May want to create a promise here, probably unnecessary
-        if (sport === 2) {
+        if (sport === '2') {
             // return basebaAddllGames;
         }
-        else if (sport === 1) {
-            console.log('returning football games');
+        else if (sport === '1') {
             resolve(footballGames);
         }
         else {
