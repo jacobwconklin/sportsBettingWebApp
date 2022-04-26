@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {GameService} from '../_services/game.service';
-import {Sport} from '../_models/sport';
-import {Game} from '../_models/game';
-import {AuthService} from '../_services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { GameService } from '../_services/game.service';
+import { Sport } from '../_models/sport';
+import { Game } from '../_models/game';
+import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -28,8 +28,10 @@ export class Basketballbets implements OnInit {
   getGames() {
 
     this.gameService.getUpcomingGames(Sport.basketball).subscribe(data => {
+      console.log('got something back');
+      console.log(data);
       this.games = data;
-      // console.log(data);
+
     });
   }
 

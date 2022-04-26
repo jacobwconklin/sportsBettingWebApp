@@ -87,7 +87,7 @@ export class ConfirmationComponent implements OnInit {
     // Make a random Bet object
     const newBet: Bet = {
       user: this.authService.currentUserValue,
-      game: game,
+      game,
       betType: this.betType,
       odds: this.betLine,
       wager: this.betAmount,
@@ -107,7 +107,9 @@ export class ConfirmationComponent implements OnInit {
 
     console.log(this.authService.currentUserValue);
 
-    this.betService.addBet(newBet).subscribe();
+    this.betService.addBet(newBet);
+
+    this.betService.awaitResults(newBet.game.id);
   }
 
   getSport() {

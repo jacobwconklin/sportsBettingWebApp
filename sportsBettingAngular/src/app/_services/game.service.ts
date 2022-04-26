@@ -3,28 +3,12 @@ import {Sport} from '../_models/sport';
 import {Game} from '../_models/game';
 import {Observable} from 'rxjs';
 import {Result} from '../_models/result';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 export class GameService {
 
-  fakeNames: string[] = [
-    'Cardinals',
-    'Falcons',
-    'Ravens',
-    'Bulls',
-    'Panthers',
-    'Lions',
-    'Cowboys',
-    'Broncos',
-    'Packers',
-    'Vikings',
-    'Dolphins',
-    'Chargers',
-    'Raiders',
-    'Eagles'
-  ];
-
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getResults(gameID: string): Observable<Result> {
     // Need to send request with correct match ID and Odd type, and we also specify something for 'Final' as a parameter
@@ -35,8 +19,25 @@ export class GameService {
 
   }
 
-  getUpcomingGames(sport: Sport): Observable<Game[]> {
-    if (sport === Sport.basketball) {
+  getUpcomingGames(sport: Sport): Observable<any> {
+
+    return this.http.get('http://localhost:3000/game/getgames', {params: {sport: sport}});
+  }
+
+
+}
+
+
+
+
+
+
+
+
+/*
+From creating fake games for frontend:
+
+if (sport === Sport.basketball) {
       // Really we would request from our API, however we are faking it for the framework
       return new Observable<Game[]>(observer => {
         observer.next([{
@@ -92,7 +93,3 @@ export class GameService {
     } else if (sport === Sport.soccer) {
 
     } */
-  }
-
-
-}

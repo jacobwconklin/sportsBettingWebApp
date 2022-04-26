@@ -2,7 +2,8 @@ const betService = require('../services/bet.service')
 
 module.exports = {
     addBet,
-    getBetsOfUser
+    getBetsOfUser,
+    postResult
 };
 
 
@@ -22,4 +23,9 @@ function getBetsOfUser(req,res,next){
     betService.getBetsOfUser(req.user.sub).then(records => res.json(records))
         .catch(err => next(err));
     }
+
+function postResult(req, res, next) {
+    betService.postResult(req.body.result).then(records => res.json(records))
+        .catch(err => next(err));
+}
 

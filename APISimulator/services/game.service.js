@@ -7,7 +7,7 @@ module.exports = {
 
 const basketballGames = [{
     id: '1',
-    sport: 2,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Toronto Raptors', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -3.0, // These are the values we would get from jsonodds.com
@@ -27,7 +27,7 @@ const basketballGames = [{
     }
 }, {
     id: '2',
-    sport: Sport.basketball,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Boston Celtics', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -6.5, // These are the values we would get from jsonodds.com
@@ -47,7 +47,7 @@ const basketballGames = [{
     }
 },  {
     id: '3',
-    sport: Sport.basketball,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Cleveland Cavaliers', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 8.0, // These are the values we would get from jsonodds.com
@@ -67,7 +67,7 @@ const basketballGames = [{
     }
 },  {
     id: '4',
-    sport: Sport.basketball,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'New York Knicks', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
@@ -87,7 +87,7 @@ const basketballGames = [{
     }
 },  {
     id: '5',
-    sport: Sport.basketball,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Milwaukee Bucks', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -5.5, // These are the values we would get from jsonodds.com
@@ -107,7 +107,7 @@ const basketballGames = [{
     }
 },  {
     id: '6',
-    sport: Sport.basketball,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Charlotte Hornets', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -2.5, // These are the values we would get from jsonodds.com
@@ -127,7 +127,7 @@ const basketballGames = [{
     }
 }, {
     id: '7',
-    sport: Sport.basketball,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'San Antonio Spurs', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 6.5, // These are the values we would get from jsonodds.com
@@ -147,7 +147,7 @@ const basketballGames = [{
     }
 },  {
     id: '8',
-    sport: Sport.basketball,
+    sport: 0,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Utah Jazz', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
@@ -170,7 +170,7 @@ const basketballGames = [{
 
 const footballGames = [{
     id: '9',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'New England Patriots', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -4.5, // These are the values we would get from jsonodds.com
@@ -190,7 +190,7 @@ const footballGames = [{
     }
 }, {
     id: '10',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Atlanta Falcons', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 6.5, // These are the values we would get from jsonodds.com
@@ -210,7 +210,7 @@ const footballGames = [{
     }
 },  {
     id: '11',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Kansas City Chiefs', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -7.5, // These are the values we would get from jsonodds.com
@@ -230,7 +230,7 @@ const footballGames = [{
     }
 },  {
     id: '12',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Denver Broncos', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -3.5, // These are the values we would get from jsonodds.com
@@ -250,7 +250,7 @@ const footballGames = [{
     }
 },  {
     id: '13',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Baltimore Ravens', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
@@ -270,7 +270,7 @@ const footballGames = [{
     }
 },  {
     id: '14',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Green Bay Packers', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -4.5, // These are the values we would get from jsonodds.com
@@ -290,7 +290,7 @@ const footballGames = [{
     }
 }, {
     id: '15',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Miami Dolphins', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 6.5, // These are the values we would get from jsonodds.com
@@ -310,7 +310,7 @@ const footballGames = [{
     }
 },  {
     id: '16',
-    sport: Sport.football,
+    sport: 1,
     time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Seattle Seahawks', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
@@ -333,8 +333,36 @@ const footballGames = [{
 
 async function getGames(sport) {
 
+    return new Promise((resolve, reject) => {
+        console.log('got to getGames Service');
+        console.log(sport);
+        // May want to create a promise here, probably unnecessary
+        if (sport === 2) {
+            // return baseballGames;
+        }
+        else if (sport === 1) {
+            resolve(footballGames);
+        }
+        else {
+            // BasketballGames are the default
+            resolve(basketballGames);
+        }
+    });
+
 }
 
 async function getResult(gameID) {
+    // Find the game by the game ID and return its results
+    // May have the setTimeOut here!
+    for (let i = 0; i < basketballGames.length; i++) {
+        if (basketballGames[i].id === gameID) {
+            return basketballGames[i].result;
+        }
+    }
+    for (let i = 0; i < footballGames.length; i++) {
+        if (footballGames[i].id === gameID) {
+            return footballGames[i].result;
+        }
+    }
 
 }

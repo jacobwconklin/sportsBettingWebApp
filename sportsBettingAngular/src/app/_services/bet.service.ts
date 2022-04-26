@@ -9,6 +9,7 @@ import {NotificationService} from './notification.service';
 import {GameService} from './game.service';
 import {Result} from '../_models/result';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({providedIn: 'root'})
 export class BetService {
@@ -45,18 +46,10 @@ export class BetService {
     'Lost'
   ];
 
-  /*
-  allBets: Bet[] = [user: User;
-  sport: Sport;
-  game: Game;
-  position: string; // Idk how best to represent the user's position on a bet
-  wager: number;
-  status: string;];
-   */
-
   constructor(private authservice: AuthService,
               private notifservice: NotificationService,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private router: Router) {
 
   }
 
@@ -66,8 +59,40 @@ export class BetService {
 
     // Be real get from db
     return this.http.get('http://localhost:3030/bet/getbetsofuser');
+  }
 
-    const bets: Bet[] = new Array<Bet>(4);
+  addBet(bet: Bet) {
+    this.http.post('http://localhost:3030/bet/addbet/',
+      { bet });
+
+    // Confirmation component may call this instead.
+    this.awaitResults(bet.game.id).subscribe( resultsRecieved => {
+      this.router.onSameUrlNavigation = 'reload';
+    });
+  }
+
+  awaitResults(gameID: string): Observable<any> {
+    // Get results from the API based on the gameID and caluate earnings to
+    // update the database
+    this.router.onSameUrlNavigation = 'reload'
+    return null;
+    /*
+    this.http.get('http://localhost:3000/result/getResult', {params: {gameID}}).subscribe(
+      gameResult => {
+        // this.http.post('http://localhost:3030/');
+      }
+    );
+
+     */
+  }
+
+
+  /*
+  Old code from randomization for the front end:
+
+
+
+  const bets: Bet[] = new Array<Bet>(4);
 
     for (let i = 0; i < 4; i++) {
       // Just use the current User for the User
@@ -102,16 +127,9 @@ export class BetService {
 
     return new Observable<Bet[]>(observer => {
       observer.next(bets); });
+   */
 
-  }
-
-  addBet(bet: Bet) {
-
-    return this.http.post('http://localhost:3030/bet/addbet/',
-      { bet });
-
-
-    /*
+  /*
     const newBet: Bet = {
       user: this.authservice.currentUserValue,
       game: game,
@@ -135,20 +153,13 @@ export class BetService {
       });
 
      */
-  }
 
-  awaitResults(gameID: string, position: string): Observable<Result> {
-    // Get results from the API based on the gameID and position
-
-    return null;
-  }
-
-  submitResults(result: Result, bet: Bet): void  {
-    // Post the result to the database calculations can be done in the database
-    // The user who is associated with the Bet can have his wins, total, and
-    // available aspects updated based on their position on the bet and the
-    // actual results.
-  }
-
-
+  /*
+  allBets: Bet[] = [user: User;
+  sport: Sport;
+  game: Game;
+  position: string; // Idk how best to represent the user's position on a bet
+  wager: number;
+  status: string;];
+   */
 }
