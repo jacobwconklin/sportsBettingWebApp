@@ -8,7 +8,7 @@ module.exports = {
 const basketballGames = [{
     id: '1',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Toronto Raptors', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -3.0, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -28,7 +28,7 @@ const basketballGames = [{
 }, {
     id: '2',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Boston Celtics', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -6.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -48,7 +48,7 @@ const basketballGames = [{
 },  {
     id: '3',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Cleveland Cavaliers', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 8.0, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -68,7 +68,7 @@ const basketballGames = [{
 },  {
     id: '4',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'New York Knicks', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -88,7 +88,7 @@ const basketballGames = [{
 },  {
     id: '5',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Milwaukee Bucks', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -5.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -120,
@@ -108,7 +108,7 @@ const basketballGames = [{
 },  {
     id: '6',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Charlotte Hornets', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -2.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -128,7 +128,7 @@ const basketballGames = [{
 }, {
     id: '7',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'San Antonio Spurs', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 6.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -148,7 +148,7 @@ const basketballGames = [{
 },  {
     id: '8',
     sport: 0,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Utah Jazz', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -171,7 +171,7 @@ const basketballGames = [{
 const footballGames = [{
     id: '9',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'New England Patriots', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -4.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -120,
@@ -191,7 +191,7 @@ const footballGames = [{
 }, {
     id: '10',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Atlanta Falcons', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 6.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -211,13 +211,13 @@ const footballGames = [{
 },  {
     id: '11',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Kansas City Chiefs', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -7.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
     homeMoneyLine: -210,
     awayTeam: 'Cleveland Browns',
-    awaySpread: -8.0,
+    awaySpread: 7.5,
     awaySpreadLine: -110,
     awayMoneyLine: 200,
     totalNumber: 47.5,
@@ -231,7 +231,7 @@ const footballGames = [{
 },  {
     id: '12',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Denver Broncos', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -3.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -251,7 +251,7 @@ const footballGames = [{
 },  {
     id: '13',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Baltimore Ravens', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -260,7 +260,7 @@ const footballGames = [{
     awaySpread: 1.5,
     awaySpreadLine: 100,
     awayMoneyLine: -110,
-    totalNumber: 203.5,
+    totalNumber: 29.5,
     over: -110,
     under: -110,
     result: {
@@ -271,7 +271,7 @@ const footballGames = [{
 },  {
     id: '14',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Green Bay Packers', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -4.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -291,7 +291,7 @@ const footballGames = [{
 }, {
     id: '15',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Miami Dolphins', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: 6.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -311,7 +311,7 @@ const footballGames = [{
 },  {
     id: '16',
     sport: 1,
-    time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
+    time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Seattle Seahawks', // Could make 'Team's their own Model but I think it's unnecessary
     homeSpread: -1.5, // These are the values we would get from jsonodds.com
     homeSpreadLine: -110,
@@ -331,6 +331,169 @@ const footballGames = [{
 }];
 
 
+const baseballGames = [{
+    id: '17',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'Chicago Cubs', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: -1.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -120,
+    homeMoneyLine: -170,
+    awayTeam: 'Cleveland Guardians',
+    awaySpread: 1.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: 150,
+    totalNumber: 9.5,
+    over: -110,
+    under: -120,
+    result: {
+        HomeScore: 5,
+        AwayScore: 3,
+        Final: false,
+    }
+}, {
+    id: '18',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'Pittsburgh Pirates', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: -2.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -110,
+    homeMoneyLine: -210,
+    awayTeam: 'St. Louis Cardinals',
+    awaySpread: 2.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: 190,
+    totalNumber: 8.0,
+    over: -110,
+    under: -110,
+    result: {
+        HomeScore: 4,
+        AwayScore: 9,
+        Final: false,
+    }
+},  {
+    id: '19',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'Minnesota Twins', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: 1.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -110,
+    homeMoneyLine: 130,
+    awayTeam: 'Kansas City Royals',
+    awaySpread: -1.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: -140,
+    totalNumber: 7.5,
+    over: -110,
+    under: -110,
+    result: {
+        HomeScore: 10,
+        AwayScore: 2,
+        Final: false,
+    }
+},  {
+    id: '20',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'Detroit Tigers', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: -3.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -110,
+    homeMoneyLine: -250,
+    awayTeam: 'Baltimore Orioles',
+    awaySpread: 3.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: 230,
+    totalNumber: 10.5,
+    over: -120,
+    under: -110,
+    result: {
+        HomeScore: 8,
+        AwayScore: 7,
+        Final: false,
+    }
+},  {
+    id: '21',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'Toronto Blue Jays', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: 1.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -110,
+    homeMoneyLine: 120,
+    awayTeam: 'Washington Nationals',
+    awaySpread: -1.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: -150,
+    totalNumber: 29.5,
+    over: -110,
+    under: -110,
+    result: {
+        HomeScore: 0,
+        AwayScore: 4,
+        Final: false,
+    }
+},  {
+    id: '22',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'Arizona Diamondbacks', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: -5.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -110,
+    homeMoneyLine: -350,
+    awayTeam: 'Oakland Athletics',
+    awaySpread: 5.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: 300,
+    totalNumber: 12.5,
+    over: -110,
+    under: -110,
+    result: {
+        HomeScore: 11,
+        AwayScore: 0,
+        Final: false,
+    }
+}, {
+    id: '23',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'Boston Red Sox', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: 1.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -110,
+    homeMoneyLine: 130,
+    awayTeam: 'Philadelphia Phillies',
+    awaySpread: -1.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: -140,
+    totalNumber: 9.0,
+    over: -110,
+    under: -110,
+    result: {
+        HomeScore: 6,
+        AwayScore: 2,
+        Final: false,
+    }
+},  {
+    id: '24',
+    sport: 2,
+    time: getDate(), // Maybe will come as a string we can copy or a Date
+    homeTeam: 'New York Yankees', // Could make 'Team's their own Model but I think it's unnecessary
+    homeSpread: -1.5, // These are the values we would get from jsonodds.com
+    homeSpreadLine: -110,
+    homeMoneyLine: -110,
+    awayTeam: 'Miami Marlins',
+    awaySpread: 1.5,
+    awaySpreadLine: -110,
+    awayMoneyLine: -110,
+    totalNumber: 8.5,
+    over: -110,
+    under: -110,
+    result: {
+        HomeScore: 2,
+        AwayScore: 6,
+        Final: false,
+    }
+}];
+
+
 async function getGames(sport) {
 
     return new Promise((resolve, reject) => {
@@ -338,7 +501,7 @@ async function getGames(sport) {
         console.log(sport);
         // May want to create a promise here, probably unnecessary
         if (sport === '2') {
-            // return basebaAddllGames;
+            resolve(baseballGames);
         }
         else if (sport === '1') {
             resolve(footballGames);
@@ -368,4 +531,16 @@ async function getResult(gameID) {
     });
 
 
+}
+
+function getDate() {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + 1);
+    currentDate.setHours(randomIntFromInterval(10, 22), randomIntFromInterval(0, 60));
+
+    return currentDate;
+}
+
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
