@@ -62,28 +62,35 @@ export class BetService {
   }
 
   addBet(bet: Bet) {
-    this.http.post('http://localhost:3030/bet/addbet/',
+
+    console.log('in addBEt in bet.service angular');
+    console.log(bet);
+    return this.http.post('http://localhost:3030/bet/addbet/',
       { bet });
 
+    // console.log('posted I guess');
+
     // Confirmation component may call this instead.
-    this.awaitResults(bet.game.id).subscribe( resultsRecieved => {
-      this.router.onSameUrlNavigation = 'reload';
-    });
+    // this.awaitResults(bet.game.id);
+      //.subscribe( resultsRecieved => {
+      //this.router.onSameUrlNavigation = 'reload';
+      // });
   }
 
-  awaitResults(gameID: string): Observable<any> {
+  awaitResults(gameID): void {
     // Get results from the API based on the gameID and caluate earnings to
     // update the database
-    this.router.onSameUrlNavigation = 'reload'
-    return null;
-    /*
+
     this.http.get('http://localhost:3000/result/getResult', {params: {gameID}}).subscribe(
       gameResult => {
-        // this.http.post('http://localhost:3030/');
-      }
-    );
-
-     */
+        console.log('Game Result for game ID:  ' + gameID + ' is:\n');
+        console.log(gameResult);
+        this.http.post('http://localhost:3030/bet/postresult', {gameResult, gameID}).subscribe(
+          () => {
+            this.router.onSameUrlNavigation = 'reload';
+          }
+        );
+      });
   }
 
 

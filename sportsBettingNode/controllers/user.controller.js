@@ -13,7 +13,7 @@ module.exports = {
 
 
 function authenticate(req, res, next) {
-    console.log("Authenticate():", req.body);
+    // console.log("Authenticate():", req.body);
        userService.authenticate(req.body)
         .then(user => user ? res.json(user) : res.status(400).json({ message: 'Username or password is incorrect' }))
         .catch(err => next(err));
@@ -27,7 +27,7 @@ function getAllUsers(req, res, next) {
 }
 
 function addBet(req, res, next) {
-    console.log("addBet", req.body);
+    // console.log("user controller addBet", req.body);
     userService.addBet(req.body, req.params.username)
         .then(result => {res.send(result)})
         .catch(err => next(err));

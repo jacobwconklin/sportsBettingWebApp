@@ -6,7 +6,7 @@ module.exports = {
 // Here will be all of the Games and their results:
 
 const basketballGames = [{
-    id: '1',
+    identifier: '1',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Toronto Raptors', // Could make 'Team's their own Model but I think it's unnecessary
@@ -26,7 +26,7 @@ const basketballGames = [{
         Final: false,
     }
 }, {
-    id: '2',
+    identifier: '2',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Boston Celtics', // Could make 'Team's their own Model but I think it's unnecessary
@@ -46,7 +46,7 @@ const basketballGames = [{
         Final: false,
     }
 },  {
-    id: '3',
+    identifier: '3',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Cleveland Cavaliers', // Could make 'Team's their own Model but I think it's unnecessary
@@ -66,7 +66,7 @@ const basketballGames = [{
         Final: false,
     }
 },  {
-    id: '4',
+    identifier: '4',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'New York Knicks', // Could make 'Team's their own Model but I think it's unnecessary
@@ -86,7 +86,7 @@ const basketballGames = [{
         Final: false,
     }
 },  {
-    id: '5',
+    identifier: '5',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Milwaukee Bucks', // Could make 'Team's their own Model but I think it's unnecessary
@@ -106,7 +106,7 @@ const basketballGames = [{
         Final: false,
     }
 },  {
-    id: '6',
+    identifier: '6',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Charlotte Hornets', // Could make 'Team's their own Model but I think it's unnecessary
@@ -126,7 +126,7 @@ const basketballGames = [{
         Final: false,
     }
 }, {
-    id: '7',
+    identifier: '7',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'San Antonio Spurs', // Could make 'Team's their own Model but I think it's unnecessary
@@ -146,7 +146,7 @@ const basketballGames = [{
         Final: false,
     }
 },  {
-    id: '8',
+    identifier: '8',
     sport: 0,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Utah Jazz', // Could make 'Team's their own Model but I think it's unnecessary
@@ -169,7 +169,7 @@ const basketballGames = [{
 
 
 const footballGames = [{
-    id: '9',
+    identifier: '9',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'New England Patriots', // Could make 'Team's their own Model but I think it's unnecessary
@@ -189,7 +189,7 @@ const footballGames = [{
         Final: false,
     }
 }, {
-    id: '10',
+    identifier: '10',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Atlanta Falcons', // Could make 'Team's their own Model but I think it's unnecessary
@@ -209,7 +209,7 @@ const footballGames = [{
         Final: false,
     }
 },  {
-    id: '11',
+    identifier: '11',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Kansas City Chiefs', // Could make 'Team's their own Model but I think it's unnecessary
@@ -229,7 +229,7 @@ const footballGames = [{
         Final: false,
     }
 },  {
-    id: '12',
+    identifier: '12',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Denver Broncos', // Could make 'Team's their own Model but I think it's unnecessary
@@ -249,7 +249,7 @@ const footballGames = [{
         Final: false,
     }
 },  {
-    id: '13',
+    identifier: '13',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Baltimore Ravens', // Could make 'Team's their own Model but I think it's unnecessary
@@ -269,7 +269,7 @@ const footballGames = [{
         Final: false,
     }
 },  {
-    id: '14',
+    identifier: '14',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Green Bay Packers', // Could make 'Team's their own Model but I think it's unnecessary
@@ -289,7 +289,7 @@ const footballGames = [{
         Final: false,
     }
 }, {
-    id: '15',
+    identifier: '15',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Miami Dolphins', // Could make 'Team's their own Model but I think it's unnecessary
@@ -309,7 +309,7 @@ const footballGames = [{
         Final: false,
     }
 },  {
-    id: '16',
+    identifier: '16',
     sport: 1,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Seattle Seahawks', // Could make 'Team's their own Model but I think it's unnecessary
@@ -332,7 +332,7 @@ const footballGames = [{
 
 
 const baseballGames = [{
-    id: '17',
+    identifier: '17',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Chicago Cubs', // Could make 'Team's their own Model but I think it's unnecessary
@@ -352,7 +352,7 @@ const baseballGames = [{
         Final: false,
     }
 }, {
-    id: '18',
+    identifier: '18',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Pittsburgh Pirates', // Could make 'Team's their own Model but I think it's unnecessary
@@ -372,7 +372,7 @@ const baseballGames = [{
         Final: false,
     }
 },  {
-    id: '19',
+    identifier: '19',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Minnesota Twins', // Could make 'Team's their own Model but I think it's unnecessary
@@ -392,7 +392,7 @@ const baseballGames = [{
         Final: false,
     }
 },  {
-    id: '20',
+    identifier: '20',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Detroit Tigers', // Could make 'Team's their own Model but I think it's unnecessary
@@ -412,7 +412,7 @@ const baseballGames = [{
         Final: false,
     }
 },  {
-    id: '21',
+    identifier: '21',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Toronto Blue Jays', // Could make 'Team's their own Model but I think it's unnecessary
@@ -432,7 +432,7 @@ const baseballGames = [{
         Final: false,
     }
 },  {
-    id: '22',
+    identifier: '22',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Arizona Diamondbacks', // Could make 'Team's their own Model but I think it's unnecessary
@@ -452,7 +452,7 @@ const baseballGames = [{
         Final: false,
     }
 }, {
-    id: '23',
+    identifier: '23',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'Boston Red Sox', // Could make 'Team's their own Model but I think it's unnecessary
@@ -472,7 +472,7 @@ const baseballGames = [{
         Final: false,
     }
 },  {
-    id: '24',
+    identifier: '24',
     sport: 2,
     time: getDate(), // Maybe will come as a string we can copy or a Date
     homeTeam: 'New York Yankees', // Could make 'Team's their own Model but I think it's unnecessary
@@ -517,20 +517,26 @@ async function getGames(sport) {
 async function getResult(gameID) {
     // Find the game by the game ID and return its results
     // May have the setTimeOut here!
-    return new Promise((resolve, reject) => {
+
+
         for (let i = 0; i < basketballGames.length; i++) {
-            if (basketballGames[i].id === gameID) {
-                resolve(basketballGames[i].result);
+            if (basketballGames[i].identifier === gameID) {
+                return (basketballGames[i].result);
             }
         }
         for (let i = 0; i < footballGames.length; i++) {
-            if (footballGames[i].id === gameID) {
-                resolve(footballGames[i].result);
+            if (footballGames[i].identifier === gameID) {
+                return (footballGames[i].result);
             }
         }
-    });
-
-
+        for (let i = 0; i < baseballGames.length; i++) {
+            if (baseballGames[i].identifier === gameID) {
+                // console.log('found a match, game is:');
+                // console.log(baseballGames[i]);
+                // console.log(baseballGames[i].result);
+                return (baseballGames[i].result);
+            }
+        }
 }
 
 function getDate() {

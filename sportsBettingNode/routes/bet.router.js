@@ -4,7 +4,7 @@ const betController = require('../controllers/bet.controller');
 
 
 router.post('/addbet', betController.addBet);
-router.post('/postResult', betController.postResult);
+router.post('/postresult', betController.postResult);
 router.get('/getbetsofuser', betController.getBetsOfUser);
 
 module.exports = router;

@@ -19,13 +19,15 @@ function addBet(req, res, next) {
 }
 
 function getBetsOfUser(req,res,next){
-    console.log('got to get bets of user in controller');
+    // console.log('got to get bets of user in controller');
     betService.getBetsOfUser(req.user.sub).then(records => res.json(records))
         .catch(err => next(err));
     }
 
 function postResult(req, res, next) {
-    betService.postResult(req.body.result).then(records => res.json(records))
+    console.log('in post result of bet controller, req.body is:');
+    console.log(req.body);
+    betService.postResult(req.body.result, req.body.gameId, req.user.sub).then(records => res.json(records))
         .catch(err => next(err));
 }
 

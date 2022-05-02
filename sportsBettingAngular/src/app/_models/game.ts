@@ -1,7 +1,7 @@
 import {Sport} from './sport';
 
 export class Game {
-  id: string;
+  identifier: string;
   sport: Sport;
   time: Date; // Maybe will come as a string we can copy or a Date
   homeTeam: string; // Could make 'Team's their own Model but I think it's unnecessary

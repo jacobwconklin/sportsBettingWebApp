@@ -7,6 +7,7 @@ import {Sport} from '../_models/sport';
 import { Game } from '../_models/game';
 import { Bet } from '../_models/bet';
 import { UserService } from '../_services/user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-confirmation',
@@ -36,6 +37,7 @@ export class ConfirmationComponent implements OnInit {
   betType: string = this.route.snapshot.queryParamMap.get('betType');
   betLine: number = parseInt(this.route.snapshot.queryParamMap.get('betLine'), 10);
   gameTime: string = this.route.snapshot.queryParamMap.get('gameTime');
+  id: string = this.route.snapshot.queryParamMap.get('id');
   toWin: number;
 
   statuses: string[] = [
@@ -46,7 +48,11 @@ export class ConfirmationComponent implements OnInit {
 
   toogle = new FormControl(this.betAmount, []);
 
-  constructor(private authService: AuthService, private route: ActivatedRoute, private betService: BetService, private userService: UserService) { }
+  constructor(private authService: AuthService,
+              private route: ActivatedRoute,
+              private betService: BetService,
+              private userService: UserService,
+              private http: HttpClient) { }
 
   ngOnInit() {
 
@@ -69,7 +75,7 @@ export class ConfirmationComponent implements OnInit {
     this.getToWin();
 
     const game: Game = {
-      id: '1',
+      identifier: this.id,
       sport: this.sport,
       time: new Date(Date.now()), // Maybe will come as a string we can copy or a Date
       homeTeam: this.homeTeam, // Could make 'Team's their own Model but I think it's unnecessary
@@ -84,17 +90,20 @@ export class ConfirmationComponent implements OnInit {
       over: this.over,
       under: this.under
     };
-    // Make a random Bet object
+    // Make a new Bet object
     const newBet: Bet = {
       user: this.authService.currentUserValue,
       game,
       betType: this.betType,
+      betLine: this.betLine,
       odds: this.betLine,
       wager: this.betAmount,
       toWin: this.toWin,
       status: this.statuses[0]
     };
     // need to add route to set user data
+
+    console.log('game id is: ' + this.id);
 
     const updateUser: { wagered: number; available: number; trades: number } = {
       trades: this.authService.currentUserValue.trades,
@@ -105,11 +114,16 @@ export class ConfirmationComponent implements OnInit {
       console.log(data);
     });
 
-    console.log(this.authService.currentUserValue);
+    this.betService.addBet(newBet).subscribe( betAdded => {
 
-    this.betService.addBet(newBet);
+      console.log(newBet.game.identifier);
+      this.betService.awaitResults(newBet.game.identifier);
+    });
+    // console.log(newBet);
 
-    this.betService.awaitResults(newBet.game.id);
+
+
+    // this.betService.awaitResults(newBet.game.id);
   }
 
   getSport() {

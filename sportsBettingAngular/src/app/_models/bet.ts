@@ -7,6 +7,7 @@ export class Bet {
   game: Game;
   betType: string; // Idk how best to represent the user's position on a bet
                     // (meaning like what kind of bet they are doing, maybe should be an enumerated type)
+  betLine: number;
   odds: number;
   wager: number;
   toWin: number;

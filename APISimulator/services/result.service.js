@@ -7,6 +7,18 @@ module.exports = {
 
 async function getResult(gameID) {
 
-    return await gameService.getResult(gameID);
+    let result = await gameService.getResult(gameID);
+
+    return new Promise((resolve, reject) => {
+    setTimeout( () => {
+
+        console.log('in result.service with following gameID');
+        console.log(gameID);
+        console.log(result);
+        resolve(result);
+
+    }, 1000); });
+
+
 
 }

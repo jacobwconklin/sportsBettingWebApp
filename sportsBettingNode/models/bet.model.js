@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Game = new Schema({
+    identifier: {type: String},
     sport: {type: Number},
     time: {type: Date},
     homeTeam: {type: String},
@@ -22,7 +23,8 @@ const schema = new Schema({
 
     user: { type: String },
     game: Game,
-    position: {type: String},
+    betType: {type: String},
+    betLine: {type: Number},
     odds: {type: Number},
     wager: {type: Number},
     toWin: {type: Number},
