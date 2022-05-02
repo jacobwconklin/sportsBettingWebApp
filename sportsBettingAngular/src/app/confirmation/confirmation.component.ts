@@ -114,10 +114,10 @@ export class ConfirmationComponent implements OnInit {
       console.log(data);
     });
 
-    this.betService.addBet(newBet).subscribe( betAdded => {
+    this.betService.addBet(newBet).subscribe( betID => {
 
-      console.log(newBet.game.identifier);
-      this.betService.awaitResults(newBet.game.identifier);
+      console.log(betID);
+      this.betService.awaitResults(newBet.game.identifier, betID);
     });
     // console.log(newBet);
 

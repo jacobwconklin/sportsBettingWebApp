@@ -72,21 +72,22 @@ export class BetService {
 
     // Confirmation component may call this instead.
     // this.awaitResults(bet.game.id);
-      //.subscribe( resultsRecieved => {
-      //this.router.onSameUrlNavigation = 'reload';
+      // .subscribe( resultsRecieved => {
+      // this.router.onSameUrlNavigation = 'reload';
       // });
   }
 
-  awaitResults(gameID): void {
+  awaitResults(gameID, betID): void {
     // Get results from the API based on the gameID and caluate earnings to
     // update the database
 
     this.http.get('http://localhost:3000/result/getResult', {params: {gameID}}).subscribe(
-      gameResult => {
+      result => {
         console.log('Game Result for game ID:  ' + gameID + ' is:\n');
-        console.log(gameResult);
-        this.http.post('http://localhost:3030/bet/postresult', {gameResult, gameID}).subscribe(
+        console.log(result);
+        this.http.post('http://localhost:3030/bet/postresult', {result, betID}).subscribe(
           () => {
+            console.log('RESULT POSTED!!');
             this.router.onSameUrlNavigation = 'reload';
           }
         );

@@ -23,7 +23,7 @@ async function addBet(bet, id) {
     // await console.log(bet.game.identifier);
     // await console.log(newBet.game.identifier);
     await newBet.save();
-    return newBet.game.identifier;
+    return newBet._id;
     // await console.log('Bet.find({})');
     // let result = await Bet.find({user: userid});
     // await console.log(result);
@@ -39,84 +39,83 @@ async function getBetsOfUser(id) {
     return await Bet.find({user: id});
 }
 
-async function postResult(result, gameID, userID) {
+async function postResult(result, betID, userID) {
 
     let user = await User.find({_id: userID});
-    let bets = Bet.find({user: userID});
-    console.log('in post result in service');
+    let bet = await Bet.findOne({_id: betID});
+    await console.log('in post result in service found bet:');
+    // await console.log(bet);
+    await console.log(result);
+    let won = false;
 
-    console.log(bets);
-
-    bets.map( bet =>
+    // Determine by position and results if user won or lost this bet
+    if (bet.betType === 'Over')
     {
-        console.log('looping through bets');
-        console.log(bet);
-        if (bet.game.identifier === gameID && bet.status === 'Pending')
+        console.log('in over part');
+        console.log( (result.AwayScore + result.HomeScore) + ' - to - ' + bet.game.totalNumber);
+        //Won
+        if (result.AwayScore + result.HomeScore > bet.game.totalNumber)
         {
-            console.log('found a matching bet');
-            // update bet for each possible position and what happened, and update user
-            if (bet.position === 'Over')
-            {
-                console.log('in over part');
-                //Won
-                if (result.awayFinalScore + result.homeFinalScore > bet.game.totalNumber)
-                {
-                    Bet.updateOne({_id: bet._id}, {status: 'Won'});
-                    let wins = User.findOne({_id: userID}).select('wins');
-                    let earnings = User.findOne({_id: userID}).select('earnings');
-                    let available = User.findOne({_id: userID}).select('available');
-                    User.updateOne({_id: userID}, {wins: wins++, earnings: earnings + bet.toWin,
-                        available: available + bet.toWin})
-                }
-                //Lost
-                else
-                {
-                    Bet.updateOne({_id: bet._id}, {status: 'Lost'});
-                }
-            }
-            else if (bet.position === 'Under')
-            {
-                //Won
-                if (result.awayFinalScore + result.homeFinalScore < bet.game.totalNumber)
-                {
-                    Bet.updateOne({_id: bet._id}, {status: 'Won'});
-                    let wins = User.findOne({_id: userID}).select('wins');
-                    let earnings = User.findOne({_id: userID}).select('earnings');
-                    let available = User.findOne({_id: userID}).select('available');
-                    User.updateOne({_id: userID}, {wins: wins++, earnings: earnings + bet.toWin,
-                        available: available + bet.toWin})
-                }
-                //Lost
-                else
-                {
-                    Bet.updateOne({_id: bet._id}, {status: 'Lost'});
-                }
-            }
-            else if (bet.position === 'Spread')
-            {
-                // Determine if they chose home or away by
-                // betLine which will equal game.awaySpreadLine or game.homeSpreadLine
-            }
-            else if (bet.position === 'ML')
-            {
-
-            }
-            /* Included in Game Model:
-
-            homeSpread: {type: Number},
-            homeSpreadLine: {type: Number},
-            homeMoneyLine: {type: Number},
-            awayTeam: {type: String},
-            awaySpread: {type: Number},
-            awaySpreadLine: {type: Number},
-            awayMoneyLine: {type: Number},
-            totalNumber: {type: Number},
-            over: {type: Number},
-            under: {type: Number},
-             */
-
+            console.log('is Over!')
+            won = true;
         }
-    });
+        //else Lost
+    }
+    else if (bet.betType === 'Under')
+    {
+        //Won
+        if (result.AwayScore + result.HomeScore < bet.game.totalNumber)
+        {
+            won = true;
+        }
+        //else Lost
+    }
+    else if (bet.betType === 'Spread')
+    {
+        // Determine if they chose home or away by
+        // betLine which will equal game.awaySpreadLine or game.homeSpreadLine
+    }
+    else if (bet.betType === 'ML')
+    {
 
+    }
+
+    //Perform updates
+    if (won)
+    {
+        console.log('its a win');
+        await Bet.updateOne({_id: betID}, {status: 'Won'});
+        let wins = await User.findOne({_id: userID}).select('wins');
+        let earnings = await User.findOne({_id: userID}).select('earnings');
+        let available = await User.findOne({_id: userID}).select('available');
+        await User.updateOne({_id: userID}, {wins: wins.wins + 1, earnings: earnings.earnings + bet.toWin,
+            available: available.available + bet.toWin})
+    }
+    else
+    {
+        console.log('its a loss');
+        await Bet.updateOne({_id: bet._id}, {status: 'Lost'});
+    }
+
+    // see if bet has been updated
+    // let betUp = await Bet.findOne({_id: betID});
+    // await console.log('afterwards');
+    // await console.log(betUp);
+
+    /* Included in Game Model:
+
+    homeSpread: {type: Number},
+    homeSpreadLine: {type: Number},
+    homeMoneyLine: {type: Number},
+    awayTeam: {type: String},
+    awaySpread: {type: Number},
+    awaySpreadLine: {type: Number},
+    awayMoneyLine: {type: Number},
+    totalNumber: {type: Number},
+    over: {type: Number},
+    under: {type: Number},
+     */
+
+    // if (bet.game.identifier === gameID && bet.status === 'Pending')
 
 }
