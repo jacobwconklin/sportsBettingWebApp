@@ -41,9 +41,8 @@ async function getBetsOfUser(id) {
 
 async function postResult(result, betID, userID) {
 
-    let user = await User.find({_id: userID});
     let bet = await Bet.findOne({_id: betID});
-    await console.log('in post result in service found bet:');
+    // await console.log('in post result in service found bet:');
     // await console.log(bet);
     await console.log(result);
     let won = false;
@@ -51,12 +50,12 @@ async function postResult(result, betID, userID) {
     // Determine by position and results if user won or lost this bet
     if (bet.betType === 'Over')
     {
-        console.log('in over part');
-        console.log( (result.AwayScore + result.HomeScore) + ' - to - ' + bet.game.totalNumber);
+        // console.log('in over part');
+        // console.log( (result.AwayScore + result.HomeScore) + ' - to - ' + bet.game.totalNumber);
         //Won
         if (result.AwayScore + result.HomeScore > bet.game.totalNumber)
         {
-            console.log('is Over!')
+            // console.log('is Over!')
             won = true;
         }
         //else Lost
@@ -83,7 +82,7 @@ async function postResult(result, betID, userID) {
     //Perform updates
     if (won)
     {
-        console.log('its a win');
+        // console.log('its a win');
         await Bet.updateOne({_id: betID}, {status: 'Won'});
         let wins = await User.findOne({_id: userID}).select('wins');
         let earnings = await User.findOne({_id: userID}).select('earnings');
@@ -93,7 +92,7 @@ async function postResult(result, betID, userID) {
     }
     else
     {
-        console.log('its a loss');
+        // console.log('its a loss');
         await Bet.updateOne({_id: bet._id}, {status: 'Lost'});
     }
 

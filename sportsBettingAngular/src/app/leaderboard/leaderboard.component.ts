@@ -43,7 +43,7 @@ export class LeaderboardComponent implements AfterViewInit {
         if (allUsers[i].trades > 0) {
           wRate = Math.floor(allUsers[i].wins / allUsers[i].trades * 100);
         }
-        this.modUsers.push( { rank: 0, username: allUsers[i].username, earnings: allUsers[i].earnings,
+        this.modUsers.push( { rank: 0, username: allUsers[i].username, earnings: Math.round(allUsers[i].earnings),
           winRate: wRate, trades: allUsers[i].trades, wagered: allUsers[i].wagered});
       }
       this.rankUsers();

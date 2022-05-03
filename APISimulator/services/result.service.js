@@ -17,7 +17,7 @@ async function getResult(gameID) {
         console.log(result);
         resolve(result);
 
-    }, 1000); });
+    }, 8000); });
 
 
 

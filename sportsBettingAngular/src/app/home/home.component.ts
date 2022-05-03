@@ -32,7 +32,9 @@ export class HomeComponent implements OnInit {
     this.betService.getAllBetsOfUser(this.authservice.currentUserValue.username).subscribe(
       allBets => {
         this.bets = allBets;
+        this.bets.reverse();
       });
+
 
   }
 }

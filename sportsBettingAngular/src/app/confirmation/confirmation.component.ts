@@ -65,10 +65,10 @@ export class ConfirmationComponent implements OnInit {
   }
 
   clickConfirmation(amountBet) {
+    // Instead of doing this in angular, need to pull this value from MongoDB.
     this.authService.currentUserValue.available -= amountBet;
 
     // Need to build the correct Bet here, not a random Bet.
-
     // May need to change Game model or need to add more query params to make a Game JSON
 
     this.getSport();
@@ -119,11 +119,6 @@ export class ConfirmationComponent implements OnInit {
       console.log(betID);
       this.betService.awaitResults(newBet.game.identifier, betID);
     });
-    // console.log(newBet);
-
-
-
-    // this.betService.awaitResults(newBet.game.id);
   }
 
   getSport() {

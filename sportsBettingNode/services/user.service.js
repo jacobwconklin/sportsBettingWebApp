@@ -42,6 +42,8 @@ async function getByUsername(username) {
 
 async function addUser(userParam) {
 
+    console.log('got here');
+    console.log(userParam);
     // validate
     if (await User.findOne({ username: userParam.username })) {
         throw 'Username "' + userParam.username + '" is already taken';
@@ -50,6 +52,7 @@ async function addUser(userParam) {
         throw 'Email "' + userParam.email + '" is already taken';
     }
 
+    console.log('all the way here');
     const user = new User(userParam);
 
     // hash password
@@ -57,18 +60,11 @@ async function addUser(userParam) {
         user.hash = bcrypt.hashSync(userParam.password, 10);
     }
 
+    console.log('now here');
     // save user
     await user.save();
 
 }
-
-/* async function setGoals(values, userid){
-
-    let id = await User.findOne({username: userid}).select('_id');
-
-    return await User.updateOne({_id: id._id}, {caloriegoal: values.caloriegoal, minutegoal: values.minutegoal});
-}
- */
 
 async function addBet(data, userid) {
     console.log('addBet data service', data);
@@ -81,19 +77,4 @@ async function addBet(data, userid) {
     return await User.updateOne({_id: id._id}, {wagered: wagered.wagered + data.wagered, trades: trades.trades + 1, available: available.available - wagered.wagered});
 }
 
-
-/* async function getGoals(username){
-    //I am returning the entire User object to have it's goals ripped out in the Angular side
-    //console.log('get goals username param is: ' + username);
-    let goalValues = await User.findOne({username: username}).select('caloriegoal minutegoal');
-    console.log('get goals is giving: ' + fullPerson);
-    console.log('get goals is giving: ' + goalValues);
-    console.log('get goals is giving: ' + goalValues.caloriegoal);
-    console.log('get goals is giving: ' + goalValues.minutegoal);
-    return await User.findOne({username: username}).select('caloriegoal minutegoal');
-
-    //Instead of using .select('caloriegoal minutegoal') to pull just the goals here, may even be able
-    // to add this without breaking anything, will have to see.
-}
-*/
 
