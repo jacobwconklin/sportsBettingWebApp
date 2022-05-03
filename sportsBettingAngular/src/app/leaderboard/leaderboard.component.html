@@ -40,10 +40,10 @@
         <td mat-cell *matCellDef="let row"> {{row.trades}} </td>
       </ng-container>
 
-      <!-- Wager Column -->
-      <ng-container matColumnDef="wagered">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Wagered </th>
-        <td mat-cell *matCellDef="let row"> ${{row.wagered}} </td>
+      <!-- Available Column -->
+      <ng-container matColumnDef="available">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Account Balance </th>
+        <td mat-cell *matCellDef="let row"> ${{row.available}} </td>
       </ng-container>
 
 

@@ -14,7 +14,7 @@ export interface UserData {
   earnings: number;
   winRate: number;
   trades: number;
-  wagered: number;
+  available: number;
 }
 
 @Component({
@@ -23,7 +23,7 @@ export interface UserData {
   styleUrls: ['./leaderboard.component.css']
 })
 export class LeaderboardComponent implements AfterViewInit {
-  displayedColumns: string[] = ['rank', 'username', 'earnings', 'winRate', 'trades', 'wagered'];
+  displayedColumns: string[] = ['rank', 'username', 'earnings', 'winRate', 'trades', 'available'];
   dataSource: MatTableDataSource<UserData>;
   currUser: User = this.authservice.currentUserValue;
 
@@ -44,7 +44,7 @@ export class LeaderboardComponent implements AfterViewInit {
           wRate = Math.floor(allUsers[i].wins / allUsers[i].trades * 100);
         }
         this.modUsers.push( { rank: 0, username: allUsers[i].username, earnings: Math.round(allUsers[i].earnings),
-          winRate: wRate, trades: allUsers[i].trades, wagered: allUsers[i].wagered});
+          winRate: wRate, trades: allUsers[i].trades, available: Math.round(allUsers[i].available) });
       }
       this.rankUsers();
       this.dataSource.paginator = this.paginator;

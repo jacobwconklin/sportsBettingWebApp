@@ -44,7 +44,7 @@ async function postResult(result, betID, userID) {
     let bet = await Bet.findOne({_id: betID});
     // await console.log('in post result in service found bet:');
     // await console.log(bet);
-    await console.log(result);
+    // await console.log(result);
     let won = false;
 
     // Determine by position and results if user won or lost this bet
@@ -109,26 +109,5 @@ async function postResult(result, betID, userID) {
         // console.log('its a loss');
         await Bet.updateOne({_id: bet._id}, {status: 'Lost'});
     }
-
-    // see if bet has been updated
-    // let betUp = await Bet.findOne({_id: betID});
-    // await console.log('afterwards');
-    // await console.log(betUp);
-
-    /* Included in Game Model:
-
-    homeSpread: {type: Number},
-    homeSpreadLine: {type: Number},
-    homeMoneyLine: {type: Number},
-    awayTeam: {type: String},
-    awaySpread: {type: Number},
-    awaySpreadLine: {type: Number},
-    awayMoneyLine: {type: Number},
-    totalNumber: {type: Number},
-    over: {type: Number},
-    under: {type: Number},
-     */
-
-    // if (bet.game.identifier === gameID && bet.status === 'Pending')
 
 }

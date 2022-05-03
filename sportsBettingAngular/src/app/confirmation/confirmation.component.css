@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.toWin {
+  text-align: center;
+}
+
 .innerConfirmationCard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

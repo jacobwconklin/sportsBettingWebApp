@@ -54,6 +54,7 @@ async function addUser(userParam) {
 
     console.log('all the way here');
     const user = new User(userParam);
+    user.available = 100000;
 
     // hash password
     if (userParam.password) {

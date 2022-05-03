@@ -58,6 +58,7 @@ export class ConfirmationComponent implements OnInit {
 
     this.toogle.valueChanges.subscribe(newToogleValue => {
       this.betAmount = newToogleValue;
+      this.ToWin();
     });
 
     this.available = this.authService.currentUserValue.available;
@@ -139,7 +140,16 @@ export class ConfirmationComponent implements OnInit {
     } else {
       this.toWin = (this.betAmount - ((100 / this.betLine) + 1) * this.betAmount) + this.betAmount;
     }
+
   }
 
+
+  ToWin() {
+    if (this.betLine > 0) {
+      this.toWin = ((this.betLine / 100) + 1) * this.betAmount;
+    } else {
+      this.toWin = (this.betAmount - ((100 / this.betLine) + 1) * this.betAmount) + this.betAmount;
+    }
+  }
 
 }
