@@ -69,15 +69,29 @@ async function postResult(result, betID, userID) {
         }
         //else Lost
     }
-    else if (bet.betType === 'Spread')
+    // Determine if they chose home or away by
+    // betLine which will equal game.awaySpreadLine or game.homeSpreadLine
+    else if (bet.betType === 'SpreadH')
     {
-        // Determine if they chose home or away by
-        // betLine which will equal game.awaySpreadLine or game.homeSpreadLine
+        if (result.HomeScore - result.AwayScore >= bet.betLine)
+            won = true;
     }
-    else if (bet.betType === 'ML')
+    else if (bet.betType === 'SpreadA')
     {
+        if (result.AwayScore - result.HomeScore >= bet.betLine)
+            won = true;
+    }
+    // Determine if they picked home or aray, then determine if home or away won
+    // final === true is home victory, false === away victory
+    else if (bet.betType === 'MLH' && result.final === true)
+    {
+        won = true;
+    }
+    else if (bet.betType === 'MLA' && result.final === false)
+    {
+        won = true;
+    }
 
-    }
 
     //Perform updates
     if (won)
