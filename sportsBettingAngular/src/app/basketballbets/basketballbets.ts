@@ -4,6 +4,7 @@ import { Sport } from '../_models/sport';
 import { Game } from '../_models/game';
 import { AuthService } from '../_services/auth.service';
 import { Router } from '@angular/router';
+import { UserService } from '../_services/user.service';
 
 @Component({
   selector: 'app-basketballbets',
@@ -14,15 +15,19 @@ export class Basketballbets implements OnInit {
 
   games: Game[] = [];
 
+  available = 0;
+
   sport: string;
 
-  constructor(private gameService: GameService, private authService: AuthService, private route: Router) {
+  constructor(private gameService: GameService, private authService: AuthService, private route: Router, private userService: UserService) {
     this.sport = this.route.url.substring(1, this.route.url.length);
     // console.log(this.sport);
   }
 
   ngOnInit() {
     this.getGames();
+
+    this.getUserAvailableMoney();
   }
 
   getGames() {
@@ -36,7 +41,13 @@ export class Basketballbets implements OnInit {
   }
 
   getUserAvailableMoney() {
-    return this.authService.currentUserValue.available;
+    // console.log('available: ', this.authService.currentUserValue.available);
+
+    this.userService.getavailable(this.authService.currentUserValue.username).subscribe(data => {
+      console.log(data);
+      this.available = data.available;
+    });
+
   }
 
 

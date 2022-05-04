@@ -78,9 +78,6 @@ export class UserService {
   // }
 
 
-
-
-
   register(user: User) {
     return this.http.post(`http://localhost:3030/user/register`, user);
   }
@@ -90,9 +87,8 @@ export class UserService {
     return this.http.get<User>('http://localhost:3030/user/getgoals', {params: {username}});
   }
 
-  setgoals(calorieGoal: number, minuteGoal: number, user: User) {
-    return this.http.post('http://localhost:3030/user/setgoals/'  + user.username,
-      {caloriegoal: calorieGoal, minutegoal: minuteGoal});
+  getavailable(username) {
+    return this.http.get<{available: number}>('http://localhost:3030/user/getavailable/' + username);
   }
 
 

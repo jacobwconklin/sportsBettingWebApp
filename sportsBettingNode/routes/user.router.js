@@ -8,7 +8,7 @@ const authorize = require('../_helpers/authorize');
 router.post('/authenticate', userController.authenticate);
 router.post('/register', userController.register);
 router.get('/allusers', userController.getAllUsers);
-router.post('/setgoals/:username', userController.setgoals);
+router.get('/getavailable/:username', userController.getAvailable);
 router.post('/addBet/:username', userController.addBet);
 router.get('/getgoals', userController.getgoals);
 //router.get('/getAllRecordsOfUser', userController.getAllRecordsOfUser);

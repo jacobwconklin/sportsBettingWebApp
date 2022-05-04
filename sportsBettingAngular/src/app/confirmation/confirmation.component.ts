@@ -8,6 +8,7 @@ import { Game } from '../_models/game';
 import { Bet } from '../_models/bet';
 import { UserService } from '../_services/user.service';
 import { HttpClient } from '@angular/common/http';
+import { NotificationService } from '../_services/notification.service';
 
 @Component({
   selector: 'app-confirmation',
@@ -52,24 +53,39 @@ export class ConfirmationComponent implements OnInit {
               private route: ActivatedRoute,
               private betService: BetService,
               private userService: UserService,
-              private http: HttpClient) { }
+              private http: HttpClient, private notifService: NotificationService) { }
 
   ngOnInit() {
 
     this.toogle.valueChanges.subscribe(newToogleValue => {
       this.betAmount = newToogleValue;
-      this.ToWin();
     });
 
     this.available = this.authService.currentUserValue.available;
 
   }
 
+  getUserAvailableMoney() {
+    // console.log('available: ', this.authService.currentUserValue.available);
+
+    this.userService.getavailable(this.authService.currentUserValue.username).subscribe(data => {
+      this.available = data.available;
+    });
+
+  }
+
   clickConfirmation(amountBet) {
-    // Instead of doing this in angular, need to pull this value from MongoDB.
-    this.authService.currentUserValue.available -= amountBet;
+
+    if (amountBet <= this.available && amountBet > 0) {
+
+    } else {
+      return this.notifService.showNotif('Error: bet amount is more than available balance or negative bet');
+    }
+
+
 
     // Need to build the correct Bet here, not a random Bet.
+
     // May need to change Game model or need to add more query params to make a Game JSON
 
     this.getSport();
@@ -112,14 +128,16 @@ export class ConfirmationComponent implements OnInit {
       available: this.authService.currentUserValue.available
     };
     this.userService.addBet(updateUser, this.authService.currentUserValue.username).subscribe(data => {
-      console.log(data);
+      console.log('userservice addbet: ', data);
     });
 
     this.betService.addBet(newBet).subscribe( betID => {
 
-      console.log(betID);
+      // console.log(betID);
       this.betService.awaitResults(newBet.game.identifier, betID);
     });
+    // console.log(newBet);
+    // this.betService.awaitResults(newBet.game.id);
   }
 
   getSport() {
@@ -140,16 +158,7 @@ export class ConfirmationComponent implements OnInit {
     } else {
       this.toWin = (this.betAmount - ((100 / this.betLine) + 1) * this.betAmount) + this.betAmount;
     }
-
   }
 
-
-  ToWin() {
-    if (this.betLine > 0) {
-      this.toWin = ((this.betLine / 100) + 1) * this.betAmount;
-    } else {
-      this.toWin = (this.betAmount - ((100 / this.betLine) + 1) * this.betAmount) + this.betAmount;
-    }
-  }
 
 }

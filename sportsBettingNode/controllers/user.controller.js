@@ -7,7 +7,8 @@ module.exports = {
     register,
     getgoals,
     setgoals,
-    addBet
+    addBet,
+    getAvailable
     //getAllRecordsOfUser
 };
 
@@ -33,6 +34,15 @@ function addBet(req, res, next) {
         .catch(err => next(err));
 }
 
+function getAvailable(req, res, next)
+{
+
+    userService.getAvailable(req.params.username)
+        .then(result => res.json(result))
+        .catch(err =>{next(err)});
+
+}
+
 //TODO: set goals (calorie goal and minute goal) for a user. Hint: write a middleware function and add it to the module exports.
 function setgoals(req, res, next)
 {
@@ -46,6 +56,8 @@ function setgoals(req, res, next)
         .catch(err =>{next(err)});
 
 }
+
+
 
 
 function register(req, res, next) {

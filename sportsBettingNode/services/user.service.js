@@ -12,7 +12,8 @@ module.exports = {
     getAllUsers,
     getByUsername,
     addUser,
-    addBet
+    addBet,
+    getAvailable
 }
 
 async function authenticate({ username, password }) {
@@ -67,15 +68,27 @@ async function addUser(userParam) {
 
 }
 
+async function getAvailable(userid){
+
+    let id = await User.findOne({username: userid}).select('_id');
+
+    return await User.findOne({ username: userid }).select('available');
+}
+
 async function addBet(data, userid) {
-    console.log('addBet data service', data);
+    //console.log('addBet data service', data);
 
     let id = await User.findOne({username: userid}).select('_id');
     let wagered = await User.findOne({username: userid}).select('wagered');
     let trades = await User.findOne({username: userid}).select('trades');
     let available = await User.findOne({username: userid}).select('available');
 
-    return await User.updateOne({_id: id._id}, {wagered: wagered.wagered + data.wagered, trades: trades.trades + 1, available: available.available - wagered.wagered});
+    console.log('available: ', available.available);
+    console.log('wagered: ', wagered.wagered);
+
+    let remaining = available.available - wagered.wagered;
+
+    return await User.updateOne({_id: id._id}, {wagered: wagered.wagered + data.wagered, trades: trades.trades + 1, available: remaining});
 }
 
 
