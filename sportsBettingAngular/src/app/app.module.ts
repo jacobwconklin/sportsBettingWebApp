@@ -14,7 +14,6 @@ import { RegisterComponent } from './register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './interceptors/error.interceptor';
-import { CreateRecordComponent } from './create-record/create-record.component';
 import { IgxAvatarModule } from 'igniteui-angular';
 import { BetComponent } from './bet/bet.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
@@ -32,7 +31,6 @@ import { GamecardsComponent } from './gamecards/gamecards.component';
 
     AdminComponent,
     RegisterComponent,
-    CreateRecordComponent,
     ConfirmationComponent,
     LeaderboardComponent,
     Basketballbets,

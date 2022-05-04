@@ -3,7 +3,6 @@ import {first} from 'rxjs/operators';
 
 import {UserService} from '../_services/user.service';
 import {NotificationService} from '../_services/notification.service';
-import {PARecord} from '../_models/PARecord';
 import {Bet} from '../_models/bet';
 import {BetService} from '../_services/bet.service';
 import {AuthService} from '../_services/auth.service';
@@ -14,9 +13,6 @@ import {AuthService} from '../_services/auth.service';
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-
-  parecords: PARecord[] = [];
   bets: Bet[] = [];
 
 

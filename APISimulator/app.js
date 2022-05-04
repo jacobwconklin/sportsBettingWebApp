@@ -20,8 +20,6 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(jwt());
 
-app.use('/user', require('./routes/user.router'));
-app.use('/bet', require('./routes/bet.router'));
 app.use('/game', require('./routes/game.router'));
 app.use('/result', require('./routes/result.router'));
 app.use(errorHandler);

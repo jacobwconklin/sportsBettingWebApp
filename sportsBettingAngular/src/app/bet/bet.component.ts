@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PARecord} from '../_models/PARecord';
 import {Bet} from '../_models/bet';
 import {Sport} from '../_models/sport';
 import {GameService} from '../_services/game.service';
