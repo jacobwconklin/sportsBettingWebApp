@@ -25,8 +25,8 @@ function getBetsOfUser(req,res,next){
     }
 
 function postResult(req, res, next) {
-    console.log('in post result of bet controller, req.body is:');
-    console.log(req.body);
+    // console.log('in post result of bet controller, req.body is:');
+    // console.log(req.body);
     betService.postResult(req.body.result, req.body.betID, req.user.sub).then(records => res.json(records))
         .catch(err => next(err));
 }

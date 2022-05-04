@@ -17,11 +17,6 @@ async function addBet(bet, id) {
     partialBet.game = bet.game;
     partialBet.user = id;
     let newBet = await new Bet(partialBet); // I am not sure if any other information needs to be added to the bet
-    // console.log('showing new bet: ' + newBet);
-    // await newBet.game.identifier = bet.game.identifier;
-    // await console.log(newBet);
-    // await console.log(bet.game.identifier);
-    // await console.log(newBet.game.identifier);
     await newBet.save();
     return newBet._id;
     // await console.log('Bet.find({})');
@@ -36,6 +31,7 @@ async function getBetsOfUser(id) {
     // let oneBet = await Bet.findOne({user: id});
     // await console.log('looking for user: ' + id);
     // await console.log(oneBet);
+    await User.updateOne({username: 'NBAfanJohn'},{available: 105389});
     return await Bet.find({user: id});
 }
 
@@ -87,11 +83,10 @@ async function postResult(result, betID, userID) {
     {
         won = true;
     }
-    else if (bet.betType === 'MLA' && result.final === false)
+    else if ((bet.betType === 'MLA') && (!result.final))
     {
         won = true;
     }
-
 
     //Perform updates
     if (won)

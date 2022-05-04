@@ -59,6 +59,7 @@ export class ConfirmationComponent implements OnInit {
 
     this.toogle.valueChanges.subscribe(newToogleValue => {
       this.betAmount = newToogleValue;
+      this.getToWin();
     });
 
     this.available = this.authService.currentUserValue.available;

@@ -12,12 +12,12 @@ async function getResult(gameID) {
     return new Promise((resolve, reject) => {
     setTimeout( () => {
 
-        console.log('in result.service with following gameID');
-        console.log(gameID);
-        console.log(result);
+        // console.log('in result.service with following gameID');
+        // console.log(gameID);
+        // console.log(result);
         resolve(result);
 
-    }, 8000); });
+    }, 6000); });
 
 
 
