@@ -33,8 +33,8 @@ export class Basketballbets implements OnInit {
   getGames() {
 
     this.gameService.getUpcomingGames(Sport.basketball).subscribe(data => {
-      console.log('got something back');
-      console.log(data);
+      // console.log('got something back');
+      // console.log(data);
       this.games = data;
 
     });
@@ -44,7 +44,7 @@ export class Basketballbets implements OnInit {
     // console.log('available: ', this.authService.currentUserValue.available);
 
     this.userService.getavailable(this.authService.currentUserValue.username).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.available = data.available;
     });
 

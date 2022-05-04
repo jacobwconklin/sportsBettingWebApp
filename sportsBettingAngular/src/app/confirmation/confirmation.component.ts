@@ -129,7 +129,7 @@ export class ConfirmationComponent implements OnInit {
       available: this.authService.currentUserValue.available
     };
     this.userService.addBet(updateUser, this.authService.currentUserValue.username).subscribe(data => {
-      console.log('userservice addbet: ', data);
+      // console.log('userservice addbet: ', data);
     });
 
     this.betService.addBet(newBet).subscribe( betID => {

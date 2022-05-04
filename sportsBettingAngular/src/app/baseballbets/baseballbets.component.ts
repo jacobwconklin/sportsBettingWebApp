@@ -36,7 +36,7 @@ export class BaseballbetsComponent implements OnInit {
 
     this.gameService.getUpcomingGames(Sport.baseball).subscribe(data => {
       this.games = data;
-      console.log(data);
+      // console.log(data);
     });
   }
 

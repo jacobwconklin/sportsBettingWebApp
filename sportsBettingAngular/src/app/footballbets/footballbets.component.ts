@@ -32,7 +32,7 @@ export class FootballbetsComponent implements OnInit {
 
     this.gameService.getUpcomingGames(Sport.football).subscribe(data => {
       this.games = data;
-      console.log(data);
+      // console.log(data);
     });
   }
 

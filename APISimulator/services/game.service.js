@@ -497,8 +497,8 @@ const baseballGames = [{
 async function getGames(sport) {
 
     return new Promise((resolve, reject) => {
-        console.log('got to getGames Service');
-        console.log(sport);
+        // console.log('got to getGames Service');
+        // console.log(sport);
         // May want to create a promise here, probably unnecessary
         if (sport === '2') {
             resolve(baseballGames);

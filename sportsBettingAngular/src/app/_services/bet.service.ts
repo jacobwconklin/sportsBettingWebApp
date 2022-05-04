@@ -63,8 +63,8 @@ export class BetService {
 
   addBet(bet: Bet) {
 
-    console.log('in addBEt in bet.service angular');
-    console.log(bet);
+    // console.log('in addBEt in bet.service angular');
+    // console.log(bet);
     return this.http.post('http://localhost:3030/bet/addbet/',
       { bet });
   }

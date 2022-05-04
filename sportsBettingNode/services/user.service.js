@@ -83,8 +83,8 @@ async function addBet(data, userid) {
     let trades = await User.findOne({username: userid}).select('trades');
     let available = await User.findOne({username: userid}).select('available');
 
-    console.log('available: ', available.available);
-    console.log('wagered: ', wagered.wagered);
+    // console.log('available: ', available.available);
+    // console.log('wagered: ', wagered.wagered);
 
     let remaining = available.available - wagered.wagered;
 
